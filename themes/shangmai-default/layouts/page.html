@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{ if eq .Section "products" }}
+    <div class="grid">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range site.Data.products.items }}
+        <a class="card" id="{{ .slug }}" href="#{{ .slug }}">
+          <img src="{{ .image }}" alt="{{ index .title $lang }}" loading="lazy">
+          <h3>{{ index .title $lang }}</h3>
+          <p>{{ index .desc $lang }}</p>
+          <div>
+            {{ range .tags }}<span class="badge">{{ . }}</span>{{ end }}
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+</article>
+{{ end }}

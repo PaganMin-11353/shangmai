@@ -1,0 +1,9 @@
+<div class="langswitch" aria-label="language switcher">
+  {{ $cur := . }}
+  {{ range .Site.Languages }}
+    {{ $lang := .Lang }}
+    <a href="{{ (printf "/%s/" $lang) | relURL }}" class="{{ if eq $lang $cur.Site.Language.Lang }}active{{ end }}">
+      {{ i18n (printf "lang_%s" $lang) }}
+    </a>
+  {{ end }}
+</div>

@@ -1,0 +1,10 @@
+{{/*  <!-- CDN lunr script） -->
+<script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js" defer></script>  */}}
+
+<!-- Local lunr script-->
+<script src="/vendor/lunr.min.js" defer></script>
+
+{{ $main := resources.Get "js/main.js" | minify }}
+{{ $search := resources.Get "js/search.js" | minify }}
+{{ $bundle := slice $main $search | resources.Concat "js/bundle.js" | fingerprint }}
+<script src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" defer></script>

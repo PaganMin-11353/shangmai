@@ -1,0 +1,13 @@
+{{- $lang := .Site.Language.Lang -}}
+{{- $out := slice -}}
+{{- range site.Data.products.items -}}
+  {{- $out = $out | append (dict
+      "id"    .id
+      "slug"  .slug
+      "title" (index .title $lang)
+      "desc"  (index .desc $lang)
+      "tags"  .tags
+      "url"   (printf "/%s/products/#%s" $lang .slug)
+  ) -}}
+{{- end -}}
+{{- $out | jsonify -}}

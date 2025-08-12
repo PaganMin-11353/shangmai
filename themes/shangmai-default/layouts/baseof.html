@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="min-h-screen flex flex-col">
+  {{ partial "header.html" . }}
+
+  <main id="main" class="container" tabindex="-1">
+    {{ partial "breadcrumb.html" . }}
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+  {{ partial "head/js.html" . }}
+</body>
+</html>

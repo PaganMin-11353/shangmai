@@ -1,0 +1,5 @@
+<div class="card">
+  <h3>{{ .Get "title" }}</h3>
+  <p>{{ .Inner | markdownify }}</p>
+  {{ with .Get "link" }}<a href="{{ . }}" class="btn">{{ i18n "learn_more" }}</a>{{ end }}
+</div>

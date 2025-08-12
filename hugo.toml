@@ -1,0 +1,101 @@
+baseURL = "https://example.com/"
+title = "Shangmai Polymer"
+theme = "shangmai-default"
+
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+
+[params]
+  primary = "#0B5FFF"
+  logo = "/logo.svg"
+  description = "Shangmai 尚迈 · 企业官网"
+
+[languages]
+
+  [languages.zh]
+    languageName = "中文"
+    weight = 1
+    [languages.zh.menu]
+      [[languages.zh.menu.main]] 
+        name = "首页" 
+        url = "/zh/" 
+        weight = 1
+      [[languages.zh.menu.main]] 
+        name = "技术展示" 
+        url = "/zh/tech/" 
+        weight = 2
+      [[languages.zh.menu.main]] 
+        name = "产品目录" 
+        url = "/zh/products/" 
+        weight = 3
+      [[languages.zh.menu.main]] 
+        name = "资质证书" 
+        url = "/zh/certis/" 
+        weight = 4
+      [[languages.zh.menu.main]] 
+        name = "新闻" 
+        url = "/zh/news/" 
+        weight = 5
+      [[languages.zh.menu.main]] 
+        name = "联系我们" 
+        url = "/zh/contact/" 
+        weight = 6
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    [languages.en.menu]
+      [[languages.en.menu.main]] 
+        name = "Home" 
+        url = "/en/" 
+        weight = 1
+      [[languages.en.menu.main]] 
+        name = "Technology" 
+        url = "/en/tech/" 
+        weight = 2
+      [[languages.en.menu.main]] 
+        name = "Products" 
+        url = "/en/products/" 
+        weight = 3
+      [[languages.en.menu.main]] 
+        name = "Certificates" 
+        url = "/en/certis/" 
+        weight = 4
+      [[languages.en.menu.main]] 
+        name = "News" 
+        url = "/en/news/" 
+        weight = 5
+      [[languages.en.menu.main]] 
+        name = "Contact" 
+        url = "/en/contact/" 
+        weight = 6
+
+  [languages.ja]
+    languageName = "日本語"
+    weight = 3
+    [languages.ja.menu]
+      [[languages.ja.menu.main]] 
+        name = "ホーム" 
+        url = "/ja/" 
+        weight = 1
+      [[languages.ja.menu.main]] 
+        name = "技術紹介" 
+        url = "/ja/tech/" 
+        weight = 2
+      [[languages.ja.menu.main]] 
+        name = "製品一覧" 
+        url = "/ja/products/" 
+        weight = 3
+      [[languages.ja.menu.main]] 
+        name = "認証・資格" 
+        url = "/ja/certis/" 
+        weight = 4
+      [[languages.ja.menu.main]] 
+        name = "ニュース" 
+        url = "/ja/news/" 
+        weight = 5
+      [[languages.ja.menu.main]] 
+        name = "お問い合わせ" 
+        url = "/ja/contact/" 
+        weight = 6

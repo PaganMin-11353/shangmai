@@ -1,0 +1,7 @@
+items:
+  - name: ISO 9001
+    year: 2024
+    file: /certis/iso9001.pdf
+  - name: CE
+    year: 2023
+    file: /certis/ce.pdf

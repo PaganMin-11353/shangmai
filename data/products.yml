@@ -1,0 +1,19 @@
+items:
+  - id: p1
+    slug: alpha
+    title: { zh: "工业级密封件 Alpha", en: "Industrial Seal Alpha", ja: "産業用シール Alpha" }
+    desc:  { zh: "适用于高温高压环境的密封件。", en: "Seal for high-temp and high-pressure applications.", ja: "高温高圧用途向けシール。" }
+    tags: [密封, 高温, 工业]
+    image: /images/p1.jpg
+  - id: p2
+    slug: beta
+    title: { zh: "输送带 Beta", en: "Conveyor Belt Beta", ja: "コンベアベルト Beta" }
+    desc:  { zh: "耐磨耐油，食品级可选。", en: "Wear & oil resistant, food-grade option.", ja: "耐摩耗・耐油、食品対応可。" }
+    tags: [输送, 耐油]
+    image: /images/p2.jpg
+  - id: p3
+    slug: gamma
+    title: { zh: "橡胶垫片 Gamma", en: "Rubber Gasket Gamma", ja: "ゴムガスケット Gamma" }
+    desc:  { zh: "通用型密封垫片，性价比高。", en: "General-purpose gasket with great value.", ja: "汎用シールガスケット。" }
+    tags: [垫片, 通用]
+    image: /images/p3.jpg

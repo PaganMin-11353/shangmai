@@ -1,0 +1,9 @@
+<header class="nav">
+  <a class="logo" href="{{ .Site.Home.RelPermalink }}">
+    {{ with .Site.Params.logo }}<img src="{{ . }}" alt="logo" height="32">{{ else }}{{ .Site.Title }}{{ end }}
+  </a>
+
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  {{ partial "search.html" . }}
+  {{ partial "langswitch.html" . }}
+</header>

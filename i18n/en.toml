@@ -1,0 +1,22 @@
+[nav_home] 
+    other = "Home"
+[nav_tech] 
+    other = "Technology"
+[nav_products] 
+    other = "Products"
+[nav_certs] 
+    other = "Certificates"
+[nav_news] 
+    other = "News"
+[nav_contact] 
+    other = "Contact"
+[learn_more] 
+    other = "Learn more"
+[search_placeholder] 
+    other = "Search products…"
+[lang_zh] 
+    other = "中文"
+[lang_en] 
+    other = "English"
+[lang_ja] 
+    other = "日本語"

@@ -1,0 +1,13 @@
+{{ if not .IsHome }}
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    <li><a href="{{ .Site.Home.RelPermalink }}">{{ i18n "nav_home" }}</a></li>
+    {{ with .CurrentSection }}
+      {{ if and (ne . .Site.Home) (ne .Title "") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+    <li aria-current="page">{{ .Title }}</li>
+  </ol>
+</nav>
+{{ end }}
