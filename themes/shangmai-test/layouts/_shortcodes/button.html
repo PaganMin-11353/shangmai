@@ -1,0 +1,47 @@
+{{ $text := .Get "text" | default (.Get 0) }}
+{{ $link := .Get "link" | default "#" }}
+{{ $type := .Get "type" | default "primary" }}
+{{ $size := .Get "size" | default "base" }}
+{{ $target := .Get "target" | default "" }}
+{{ $icon := .Get "icon" }}
+{{ $class := .Get "class" | default "" }}
+{{ $content := .Inner | default $text }}
+
+{{ $buttonClass := printf "btn btn-%s" $type }}
+{{ if eq $size "sm" }}
+  {{ $buttonClass = printf "%s btn-sm" $buttonClass }}
+{{ else if eq $size "lg" }}
+  {{ $buttonClass = printf "%s btn-lg" $buttonClass }}
+{{ end }}
+
+{{ if $class }}
+  {{ $buttonClass = printf "%s %s" $buttonClass $class }}
+{{ end }}
+
+<a href="{{ $link }}" 
+   class="{{ $buttonClass }}"
+   {{ if $target }}target="{{ $target }}"{{ end }}
+   {{ if eq $target "_blank" }}rel="noopener noreferrer"{{ end }}>
+  
+  {{ if $icon }}
+  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: var(--space-2);">
+    {{ if eq $icon "arrow-right" }}
+    <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+    {{ else if eq $icon "download" }}
+    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+    {{ else if eq $icon "external" }}
+    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+    {{ else if eq $icon "play" }}
+    <path d="M8 5v14l11-7z"/>
+    {{ else if eq $icon "mail" }}
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    {{ else if eq $icon "phone" }}
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    {{ else }}
+    <path d="{{ $icon }}"/>
+    {{ end }}
+  </svg>
+  {{ end }}
+  
+  {{ $content }}
+</a>

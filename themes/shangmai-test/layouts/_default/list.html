@@ -1,0 +1,396 @@
+{{ define "main" }}
+<div class="section-sm">
+    <div class="container">
+        <!-- Page Header -->
+        <header class="text-center" style="margin-bottom: var(--space-16);">
+            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4);">
+                {{ .Title }}
+            </h1>
+            {{ if .Params.description }}
+            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); max-width: 700px; margin: 0 auto var(--space-6); line-height: var(--line-height-relaxed);">
+                {{ .Params.description }}
+            </p>
+            {{ end }}
+            
+            <!-- Search and Filter Bar -->
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div style="position: relative;">
+                    <input type="text" 
+                           id="search-input"
+                           placeholder="Search {{ .Section | default "content" }}..."
+                           style="width: 100%; padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12); border: 2px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--font-size-base); transition: border-color var(--transition-fast);"
+                           onfocus="this.style.borderColor='var(--color-secondary)'"
+                           onblur="this.style.borderColor='var(--color-border)'">
+                    <svg width="20" height="20" 
+                         fill="var(--color-text-muted)" 
+                         viewBox="0 0 24 24"
+                         style="position: absolute; left: var(--space-4); top: 50%; transform: translateY(-50%); pointer-events: none;">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Content Grid -->
+        {{ if .Pages }}
+            <!-- Products Layout (Special handling for products section) -->
+            {{ if eq .Section "products" }}
+            <div class="product-grid" id="content-grid">
+                {{ range .Pages }}
+                <article class="product-card scale-in" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-title="{{ .Title | lower }}">
+                    <div class="product-image-container">
+                        {{ if .Params.image }}
+                        <img src="{{ .Params.image }}" 
+                             alt="{{ .Title }}" 
+                             class="product-image"
+                             loading="lazy">
+                        {{ else }}
+                        <div class="product-image product-image-placeholder">
+                            <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24">
+                                <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 3h8v2H8v-2zm0 3h5v2H8v-2z"/>
+                            </svg>
+                        </div>
+                        {{ end }}
+                        
+                        {{ if .Params.featured }}
+                        <div class="product-badge">Featured</div>
+                        {{ end }}
+                    </div>
+                    
+                    <div class="product-info">
+                        <h3 class="product-title">
+                            <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;">
+                                {{ .Title }}
+                            </a>
+                        </h3>
+                        <p class="product-description">{{ .Summary | truncate 120 }}</p>
+                        
+                        {{ if .Params.tags }}
+                        <div class="product-tags">
+                            {{ range first 3 .Params.tags }}
+                            <span class="product-tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        
+                        {{ if .Params.price }}
+                        <div class="product-price">{{ .Params.price }}</div>
+                        {{ end }}
+                        
+                        <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2);">
+                            <a href="{{ .RelPermalink }}" class="btn btn-outline" style="flex: 1;">Learn More</a>
+                            {{ if .Params.demo_url }}
+                            <a href="{{ .Params.demo_url }}" class="btn btn-ghost" target="_blank" rel="noopener">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                                </svg>
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+            
+            <!-- Regular Content Layout -->
+            {{ else }}
+            <div class="grid grid-cols-2" id="content-grid" style="gap: var(--space-8);">
+                {{ range .Pages }}
+                <article class="card scale-in" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-title="{{ .Title | lower }}">
+                    {{ if .Params.image }}
+                    <div style="margin-bottom: var(--space-4); border-radius: var(--radius-lg); overflow: hidden;">
+                        <img src="{{ .Params.image }}" 
+                             alt="{{ .Title }}" 
+                             style="width: 100%; height: 200px; object-fit: cover; transition: transform var(--transition-normal);"
+                             onmouseover="this.style.transform='scale(1.05)'"
+                             onmouseout="this.style.transform='scale(1)'"
+                             loading="lazy">
+                    </div>
+                    {{ end }}
+                    
+                    <h2 class="card-title">
+                        <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;">
+                            {{ .Title }}
+                        </a>
+                    </h2>
+                    
+                    <p class="card-text">{{ .Summary | truncate 150 }}</p>
+                    
+                    <!-- Meta Information -->
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+                        {{ if .Date }}
+                        <div style="display: flex; align-items: center; gap: var(--space-1);">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                            </svg>
+                            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                                {{ .Date.Format "Jan 2, 2006" }}
+                            </time>
+                        </div>
+                        {{ end }}
+                        
+                        {{ if .Params.author }}
+                        <div style="display: flex; align-items: center; gap: var(--space-1);">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                            <span>{{ .Params.author }}</span>
+                        </div>
+                        {{ end }}
+                        
+                        {{ if .Params.reading_time }}
+                        <div style="display: flex; align-items: center; gap: var(--space-1);">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>{{ .Params.reading_time }} min</span>
+                        </div>
+                        {{ end }}
+                    </div>
+                    
+                    <!-- Tags -->
+                    {{ if .Params.tags }}
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4);">
+                        {{ range first 3 .Params.tags }}
+                        <span class="product-tag">#{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .RelPermalink }}" class="btn btn-outline">Read More</a>
+                </article>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <!-- No Results Message -->
+            <div id="no-results" style="display: none; text-align: center; padding: var(--space-16) 0;">
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <h3 style="margin-bottom: var(--space-2);">No Results Found</h3>
+                    <p style="color: var(--color-text-secondary);">
+                        Try adjusting your search terms or browse all content below.
+                    </p>
+                </div>
+            </div>
+            
+        {{ else }}
+        <!-- Empty State -->
+        <div class="text-center" style="padding: var(--space-16) 0;">
+            <div style="max-width: 400px; margin: 0 auto;">
+                <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                <h2 style="margin-bottom: var(--space-2);">No Content Available</h2>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                    There's no content in this section yet. Check back soon for updates!
+                </p>
+                <a href="{{ .Site.BaseURL }}" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+        {{ end }}
+        
+        <!-- Pagination -->
+        {{ if .Paginator }}
+        {{ if gt .Paginator.TotalPages 1 }}
+        <nav aria-label="Pagination" style="margin-top: var(--space-16);">
+            <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-4); flex-wrap: wrap;">
+                {{ if .Paginator.HasPrev }}
+                <a href="{{ .Paginator.Prev.URL }}" 
+                   class="btn btn-outline"
+                   aria-label="Go to previous page">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: var(--space-2);">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    Previous
+                </a>
+                {{ end }}
+                
+                <!-- Page Numbers -->
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    {{ range .Paginator.Pagers }}
+                    {{ if eq . $.Paginator }}
+                    <span style="padding: var(--space-2) var(--space-3); background-color: var(--color-secondary); color: white; border-radius: var(--radius-base); font-weight: var(--font-weight-semibold);">
+                        {{ .PageNumber }}
+                    </span>
+                    {{ else }}
+                    <a href="{{ .URL }}" 
+                       style="padding: var(--space-2) var(--space-3); color: var(--color-text-secondary); text-decoration: none; border-radius: var(--radius-base); transition: all var(--transition-fast);"
+                       onmouseover="this.style.backgroundColor='var(--color-background-secondary)'"
+                       onmouseout="this.style.backgroundColor='transparent'">
+                        {{ .PageNumber }}
+                    </a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                
+                {{ if .Paginator.HasNext }}
+                <a href="{{ .Paginator.Next.URL }}" 
+                   class="btn btn-outline"
+                   aria-label="Go to next page">
+                    Next
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-left: var(--space-2);">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                </a>
+                {{ end }}
+            </div>
+            
+            <div class="text-center" style="margin-top: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }} 
+                ({{ len .Pages }} of {{ .Paginator.TotalNumberOfElements }} total)
+            </div>
+        </nav>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+<script>
+// Enhanced Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const contentGrid = document.getElementById('content-grid');
+    const noResults = document.getElementById('no-results');
+    
+    if (searchInput && contentGrid) {
+        let allItems = Array.from(contentGrid.children);
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+            
+            allItems.forEach(item => {
+                const title = item.getAttribute('data-title') || '';
+                const tags = item.getAttribute('data-tags') || '';
+                const text = item.textContent.toLowerCase();
+                
+                const isVisible = searchTerm === '' || 
+                    title.includes(searchTerm) || 
+                    tags.includes(searchTerm) || 
+                    text.includes(searchTerm);
+                
+                if (isVisible) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results message
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
+            }
+        });
+        
+        // Clear search with Escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                this.dispatchEvent(new Event('input'));
+                this.blur();
+            }
+        });
+    }
+});
+</script>
+
+<style>
+/* Enhanced Card Hover Effects */
+.card:hover h2 a,
+.product-card:hover .product-title a {
+    color: var(--color-secondary);
+    transition: color var(--transition-fast);
+}
+
+/* Search Input Focus States */
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Pagination Hover Effects */
+nav[aria-label="Pagination"] a:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Loading State Animation */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+.loading-shimmer {
+    background: linear-gradient(90deg, var(--color-background-secondary) 25%, var(--color-border) 50%, var(--color-background-secondary) 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav[aria-label="Pagination"] > div {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    nav[aria-label="Pagination"] > div > div {
+        order: -1;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #search-input,
+    nav[aria-label="Pagination"] {
+        display: none;
+    }
+    
+    .card,
+    .product-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--color-border);
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .card,
+    .product-card {
+        border-width: 2px;
+    }
+    
+    #search-input {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .scale-in {
+        animation: none;
+    }
+    
+    .card:hover,
+    .product-card:hover {
+        transform: none;
+    }
+    
+    img {
+        transition: none !important;
+    }
+}
+</style>

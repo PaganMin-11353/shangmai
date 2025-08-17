@@ -1,0 +1,55 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'Shangmai Test'
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+
+[params]
+  description = "Innovative solutions for tomorrow's challenges"
+  logo = "/logo.svg"
+  
+  # Hero section
+  hero_title = "Innovation Meets Excellence"
+  hero_subtitle = "Discover our cutting-edge products designed to transform your business"
+  
+  # Contact info
+  email = "info@shangmai.com"
+  phone = "+1 (555) 123-4567"
+  address = "123 Innovation Drive, Tech City, TC 12345"
+  
+  # Social media
+  [params.social]
+    facebook = "https://facebook.com/shangmai"
+    twitter = "https://twitter.com/shangmai"
+    linkedin = "https://linkedin.com/company/shangmai"
+    instagram = "https://instagram.com/shangmai"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
+[menu]
+  [[menu.main]]
+    name = "Products"
+    url = "/products/"
+    weight = 10
+  [[menu.main]]
+    name = "Solutions"
+    url = "/solutions/"
+    weight = 20
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 30
+  [[menu.main]]
+    name = "Support"
+    url = "/support/"
+    weight = 40
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 50

@@ -1,0 +1,135 @@
+{{ define "main" }}
+<div class="section-sm">
+    <div class="container">
+        <!-- Page Header -->
+        <header class="text-center" style="margin-bottom: var(--space-16);">
+            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4);">
+                {{ .Title }}
+            </h1>
+            {{ if .Params.description }}
+            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); max-width: 700px; margin: 0 auto; line-height: var(--line-height-relaxed);">
+                {{ .Params.description }}
+            </p>
+            {{ end }}
+        </header>
+        
+        <!-- Hero Image/Video Section -->
+        <section style="margin-bottom: var(--space-16);">
+            <div style="height: 400px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">
+                Company Story
+            </div>
+        </section>
+        
+        <!-- Content -->
+        <div class="content" style="max-width: 800px; margin: 0 auto var(--space-16);">
+            {{ .Content }}
+        </div>
+        
+        <!-- Company Statistics -->
+        <section style="margin-bottom: var(--space-16); padding: var(--space-12); background-color: var(--color-background-secondary); border-radius: var(--radius-2xl);">
+            <h2 class="text-center" style="margin-bottom: var(--space-8);">Our Impact</h2>
+            <div class="grid grid-cols-4 text-center">
+                <div class="scale-in">
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-secondary); margin-bottom: var(--space-2);">
+                        10+
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                        Years of Innovation
+                    </p>
+                </div>
+                
+                <div class="scale-in">
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-accent); margin-bottom: var(--space-2);">
+                        1000+
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                        Satisfied Customers
+                    </p>
+                </div>
+                
+                <div class="scale-in">
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-success); margin-bottom: var(--space-2);">
+                        50+
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                        Premium Products
+                    </p>
+                </div>
+                
+                <div class="scale-in">
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: var(--space-2);">
+                        24/7
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                        Expert Support
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section style="margin-bottom: var(--space-16);">
+            <h2 class="text-center" style="margin-bottom: var(--space-8);">Our Core Values</h2>
+            <div class="grid grid-cols-2" style="gap: var(--space-8);">
+                <div class="card scale-in">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+                        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Excellence</h3>
+                    <p class="card-text">We strive for excellence in every product and service we deliver, maintaining the highest standards of quality.</p>
+                </div>
+                
+                <div class="card scale-in">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent), var(--color-success)); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+                        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Innovation</h3>
+                    <p class="card-text">Continuous innovation drives us to push boundaries and create cutting-edge solutions for our customers.</p>
+                </div>
+                
+                <div class="card scale-in">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-success), var(--color-secondary)); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+                        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Integrity</h3>
+                    <p class="card-text">We conduct business with honesty, transparency, and ethical practices in all our relationships.</p>
+                </div>
+                
+                <div class="card scale-in">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+                        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Customer Focus</h3>
+                    <p class="card-text">Our customers are at the heart of everything we do, driving our commitment to exceptional service.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="bg-primary text-center" style="padding: var(--space-12); border-radius: var(--radius-2xl); color: white;">
+            <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-4); color: white;">
+                Ready to Work With Us?
+            </h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--space-6); color: rgba(255, 255, 255, 0.9); max-width: 500px; margin-left: auto; margin-right: auto;">
+                Join thousands of satisfied customers who trust us for their audio needs.
+            </p>
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <a href="/contact/" class="btn" style="background-color: white; color: var(--color-primary); border-color: white;">
+                    Contact Us
+                </a>
+                <a href="/products/" class="btn" style="background-color: transparent; color: white; border-color: white;">
+                    View Products
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+{{ end }}

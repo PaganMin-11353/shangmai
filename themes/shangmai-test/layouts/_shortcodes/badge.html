@@ -1,0 +1,55 @@
+{{ $type := .Get "type" | default "primary" }}
+{{ $text := .Get "text" | default (.Get 0) }}
+{{ $size := .Get "size" | default "base" }}
+{{ $content := .Inner | default $text }}
+
+{{ $bgColor := "var(--color-secondary)" }}
+{{ $textColor := "white" }}
+
+{{ if eq $type "primary" }}
+  {{ $bgColor = "var(--color-secondary)" }}
+  {{ $textColor = "white" }}
+{{ else if eq $type "secondary" }}
+  {{ $bgColor = "var(--color-gray-500)" }}
+  {{ $textColor = "white" }}
+{{ else if eq $type "success" }}
+  {{ $bgColor = "var(--color-success)" }}
+  {{ $textColor = "white" }}
+{{ else if eq $type "warning" }}
+  {{ $bgColor = "var(--color-warning)" }}
+  {{ $textColor = "var(--color-gray-900)" }}
+{{ else if eq $type "danger" }}
+  {{ $bgColor = "var(--color-danger)" }}
+  {{ $textColor = "white" }}
+{{ else if eq $type "accent" }}
+  {{ $bgColor = "var(--color-accent)" }}
+  {{ $textColor = "white" }}
+{{ else if eq $type "light" }}
+  {{ $bgColor = "var(--color-background-secondary)" }}
+  {{ $textColor = "var(--color-text-primary)" }}
+{{ end }}
+
+{{ $fontSize := "var(--font-size-sm)" }}
+{{ $padding := "var(--space-1) var(--space-3)" }}
+
+{{ if eq $size "sm" }}
+  {{ $fontSize = "var(--font-size-xs)" }}
+  {{ $padding = "var(--space-1) var(--space-2)" }}
+{{ else if eq $size "lg" }}
+  {{ $fontSize = "var(--font-size-base)" }}
+  {{ $padding = "var(--space-2) var(--space-4)" }}
+{{ end }}
+
+<span class="badge badge-{{ $type }}" style="
+  display: inline-flex;
+  align-items: center;
+  padding: {{ $padding }};
+  font-size: {{ $fontSize }};
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  background-color: {{ $bgColor }};
+  color: {{ $textColor }};
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+">{{ $content }}</span>

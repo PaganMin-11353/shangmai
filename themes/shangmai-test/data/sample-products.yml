@@ -1,0 +1,96 @@
+items:
+  - id: "innovation-suite-pro"
+    slug: "innovation-suite-pro"
+    title: 
+      en: "Innovation Suite Pro"
+    desc: 
+      en: "A comprehensive solution for modern businesses looking to streamline operations and drive growth through innovative technology."
+    tags: ["enterprise", "software", "innovation", "productivity"]
+    image: "/images/innovation-suite-pro.jpg"
+    category: "software"
+    price: "$299/month"
+    featured: true
+    
+  - id: "smart-analytics-platform"
+    slug: "smart-analytics-platform"
+    title: 
+      en: "Smart Analytics Platform"
+    desc: 
+      en: "Advanced data analytics and business intelligence platform that transforms raw data into actionable insights."
+    tags: ["analytics", "business-intelligence", "data", "insights"]
+    image: "/images/smart-analytics.jpg"
+    category: "analytics"
+    price: "$199/month"
+    featured: true
+    
+  - id: "cloud-infrastructure-manager"
+    slug: "cloud-infrastructure-manager"
+    title: 
+      en: "Cloud Infrastructure Manager"
+    desc: 
+      en: "Powerful cloud management tool that simplifies deployment, monitoring, and scaling of cloud resources."
+    tags: ["cloud", "infrastructure", "devops", "management"]
+    image: "/images/cloud-manager.jpg"
+    category: "infrastructure"
+    price: "$149/month"
+    featured: false
+    
+  - id: "collaboration-workspace"
+    slug: "collaboration-workspace"
+    title: 
+      en: "Collaboration Workspace"
+    desc: 
+      en: "Integrated workspace that brings teams together with real-time communication, project management, and file sharing."
+    tags: ["collaboration", "workspace", "teams", "communication"]
+    image: "/images/collaboration.jpg"
+    category: "productivity"
+    price: "$99/month"
+    featured: true
+    
+  - id: "security-shield-enterprise"
+    slug: "security-shield-enterprise"
+    title: 
+      en: "Security Shield Enterprise"
+    desc: 
+      en: "Enterprise-grade security solution that protects your digital assets with advanced threat detection and prevention."
+    tags: ["security", "enterprise", "protection", "cybersecurity"]
+    image: "/images/security-shield.jpg"
+    category: "security"
+    price: "$399/month"
+    featured: false
+    
+  - id: "automation-engine"
+    slug: "automation-engine"
+    title: 
+      en: "Automation Engine"
+    desc: 
+      en: "Intelligent automation platform that streamlines repetitive tasks and optimizes business processes."
+    tags: ["automation", "workflow", "efficiency", "ai"]
+    image: "/images/automation-engine.jpg"
+    category: "automation"
+    price: "$249/month"
+    featured: true
+    
+  - id: "customer-experience-hub"
+    slug: "customer-experience-hub"
+    title: 
+      en: "Customer Experience Hub"
+    desc: 
+      en: "Comprehensive customer relationship management system designed to enhance customer satisfaction and loyalty."
+    tags: ["crm", "customer-experience", "support", "engagement"]
+    image: "/images/cx-hub.jpg"
+    category: "customer-service"
+    price: "$179/month"
+    featured: false
+    
+  - id: "mobile-development-kit"
+    slug: "mobile-development-kit"
+    title: 
+      en: "Mobile Development Kit"
+    desc: 
+      en: "Complete toolkit for building high-performance mobile applications across iOS and Android platforms."
+    tags: ["mobile", "development", "cross-platform", "sdk"]
+    image: "/images/mobile-dev-kit.jpg"
+    category: "development"
+    price: "$129/month"
+    featured: false
