@@ -39,3 +39,16 @@ __pycache__/
 # === Temporary files ===
 *.swp
 *.swo
+
+# === Claude Code ===
+CLAUDE.md
+.claude/
+
+# === Playwright related ===
+playwright-report/
+.playwright-mcp/
+
+# === Temp Files ===
+tmp/
+temp/
+old/
