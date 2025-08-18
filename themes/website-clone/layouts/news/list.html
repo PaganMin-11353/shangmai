@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div style="padding: 2rem 0;">
+    <div class="container">
+        <!-- Page Header -->
+        <header style="margin-bottom: 3rem; text-center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+            {{ if .Params.description }}
+            <p style="font-size: 1.25rem; color: var(--color-text-light); max-width: 800px; margin: 0 auto;">
+                {{ .Params.description }}
+            </p>
+            {{ end }}
+        </header>
+        
+        <!-- Content -->
+        <div class="content" style="max-width: 800px; margin: 0 auto;">
+            {{ .Content }}
+        </div>
+        
+        <!-- News Categories -->
+        <section style="margin-top: 4rem;">
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Product Announcements</h3>
+                    <p>Stay updated with our latest product releases and innovations.</p>
+                    <a href="#" class="btn btn-outline">View Latest</a>
+                </div>
+                <div class="card">
+                    <h3>Company News</h3>
+                    <p>Read about our company developments and achievements.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Industry Insights</h3>
+                    <p>Expert analysis and insights into industry trends and developments.</p>
+                    <a href="#" class="btn btn-outline">Explore</a>
+                </div>
+                <div class="card">
+                    <h3>Events</h3>
+                    <p>Upcoming trade shows and events where you can find us.</p>
+                    <a href="#" class="btn btn-outline">View Events</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{{ end }}

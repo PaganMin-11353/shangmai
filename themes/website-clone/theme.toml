@@ -1,0 +1,12 @@
+name = "pwaudio-clone"
+license = "MIT"
+licenselink = "https://github.com/yourname/pwaudio-clone/blob/main/LICENSE"
+description = "A Hugo theme cloned from pwaudio.com.hk design for static product display"
+homepage = "https://github.com/yourname/pwaudio-clone"
+tags = ["product", "business", "responsive", "clean", "minimal"]
+features = ["responsive", "product-showcase", "multilingual"]
+min_version = "0.146.0"
+
+[author]
+  name = "Claude"
+  homepage = "https://claude.ai"

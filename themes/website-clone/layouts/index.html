@@ -1,0 +1,82 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="hero-title">{{ .Title | default .Site.Title }}</h1>
+        <p class="hero-subtitle">{{ .Params.subtitle | default .Site.Params.description }}</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="/products/" class="btn btn-primary">View Products</a>
+            <a href="/contact/" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+{{ if .Site.Data.products }}
+<section style="padding: 4rem 0;">
+    <div class="container">
+        <h2 class="text-center mb-xl">Featured Products</h2>
+        <div class="product-grid">
+            {{ range first 6 .Site.Data.products.items }}
+            <article class="product-card">
+                {{ if .image }}
+                <img src="{{ .image }}" alt="{{ .title.en | default .title }}" class="product-image">
+                {{ else }}
+                <div class="product-image" style="display: flex; align-items: center; justify-content: center; background-color: var(--color-surface); color: var(--color-text-muted);">
+                    No Image
+                </div>
+                {{ end }}
+                <div class="product-info">
+                    <h3 class="product-title">{{ .title.en | default .title }}</h3>
+                    <p class="product-description">{{ .desc.en | default .desc }}</p>
+                    {{ if .tags }}
+                    <div class="product-tags">
+                        {{ range .tags }}
+                        <span class="product-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    <a href="/products/{{ .slug | default .id }}/" class="btn btn-outline">Learn More</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="text-center mt-xl">
+            <a href="/products/" class="btn btn-primary">View All Products</a>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<!-- Features Section -->
+<section class="bg-surface" style="padding: 4rem 0;">
+    <div class="container">
+        <h2 class="text-center mb-xl">Why Choose Us</h2>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <h3 class="card-title">Quality Products</h3>
+                <p class="card-text">We offer only the highest quality audio equipment from trusted manufacturers.</p>
+            </div>
+            <div class="card text-center">
+                <h3 class="card-title">Expert Support</h3>
+                <p class="card-text">Our team of audio experts is here to help you find the perfect solution for your needs.</p>
+            </div>
+            <div class="card text-center">
+                <h3 class="card-title">Fast Delivery</h3>
+                <p class="card-text">Quick and reliable delivery to get your equipment when you need it most.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section style="padding: 4rem 0;">
+    <div class="container text-center">
+        <h2 class="mb-md">Ready to Get Started?</h2>
+        <p class="text-secondary mb-xl" style="max-width: 600px; margin: 0 auto;">
+            Contact us today to discuss your audio equipment needs and discover how we can help you achieve the perfect sound.
+        </p>
+        <a href="/contact/" class="btn btn-primary">Get In Touch</a>
+    </div>
+</section>
+{{ end }}

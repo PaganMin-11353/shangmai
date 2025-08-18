@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div style="padding: 2rem 0;">
+    <div class="container">
+        <!-- Page Header -->
+        <header style="margin-bottom: 3rem; text-center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+            {{ if .Params.description }}
+            <p style="font-size: 1.25rem; color: var(--color-text-light); max-width: 800px; margin: 0 auto;">
+                {{ .Params.description }}
+            </p>
+            {{ end }}
+        </header>
+        
+        <!-- Content -->
+        <div class="content" style="max-width: 800px; margin: 0 auto;">
+            {{ .Content }}
+        </div>
+        
+        <!-- Services Grid -->
+        <section style="margin-top: 4rem;">
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Business Consultation</h3>
+                    <p>Professional consultation services for your business projects and requirements.</p>
+                </div>
+                <div class="card">
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored solutions designed specifically for your unique business needs.</p>
+                </div>
+                <div class="card">
+                    <h3>Implementation Services</h3>
+                    <p>Professional implementation and setup services for optimal performance.</p>
+                </div>
+                <div class="card">
+                    <h3>Technical Support</h3>
+                    <p>Ongoing support and maintenance to keep your systems performing at their best.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{{ end }}

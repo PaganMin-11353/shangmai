@@ -1,0 +1,30 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <a href="{{ .Site.BaseURL }}" class="site-logo">
+                {{ if .Site.Params.logo }}
+                    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" height="40">
+                {{ else }}
+                    {{ .Site.Title }}
+                {{ end }}
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav" id="main-nav">
+                <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}active{{ end }}">Home</a>
+                <a href="/products/" class="nav-link {{ if eq .Section "products" }}active{{ end }}">Products</a>
+                <a href="/about/" class="nav-link {{ if eq .Section "about" }}active{{ end }}">About</a>
+                <a href="/services/" class="nav-link {{ if eq .Section "services" }}active{{ end }}">Services</a>
+                <a href="/contact/" class="nav-link {{ if eq .Section "contact" }}active{{ end }}">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>

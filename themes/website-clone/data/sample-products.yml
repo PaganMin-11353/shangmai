@@ -1,0 +1,60 @@
+items:
+  - id: "amplifier-pro"
+    slug: "amplifier-pro"
+    title: 
+      en: "Professional Audio Amplifier Pro"
+    desc: 
+      en: "High-quality professional amplifier for studio and live performance applications."
+    tags: ["amplifier", "professional", "studio"]
+    image: "/images/amplifier-pro.jpg"
+    category: "amplifiers"
+    
+  - id: "speaker-system-x1"
+    slug: "speaker-system-x1"
+    title: 
+      en: "Speaker System X1"
+    desc: 
+      en: "Premium speaker system with crystal clear sound quality and robust build."
+    tags: ["speakers", "premium", "sound-quality"]
+    image: "/images/speaker-x1.jpg"
+    category: "speakers"
+    
+  - id: "mixer-console-24"
+    slug: "mixer-console-24"
+    title: 
+      en: "24-Channel Mixer Console"
+    desc: 
+      en: "Professional 24-channel mixing console for recording studios and live venues."
+    tags: ["mixer", "console", "24-channel"]
+    image: "/images/mixer-24.jpg"
+    category: "mixers"
+    
+  - id: "microphone-condenser"
+    slug: "microphone-condenser"
+    title: 
+      en: "Studio Condenser Microphone"
+    desc: 
+      en: "High-sensitivity condenser microphone perfect for vocal recording and broadcasting."
+    tags: ["microphone", "condenser", "studio"]
+    image: "/images/mic-condenser.jpg"
+    category: "microphones"
+    
+  - id: "headphones-monitor"
+    slug: "headphones-monitor"
+    title: 
+      en: "Professional Monitor Headphones"
+    desc: 
+      en: "Accurate monitoring headphones for critical listening and audio production."
+    tags: ["headphones", "monitor", "professional"]
+    image: "/images/headphones-monitor.jpg"
+    category: "headphones"
+    
+  - id: "audio-interface"
+    slug: "audio-interface"
+    title: 
+      en: "USB Audio Interface"
+    desc: 
+      en: "High-quality USB audio interface for home studios and mobile recording."
+    tags: ["interface", "usb", "recording"]
+    image: "/images/audio-interface.jpg"
+    category: "interfaces"
