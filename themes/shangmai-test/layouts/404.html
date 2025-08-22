@@ -1,0 +1,306 @@
+{{- define "title" -}}
+{{ i18n "page_not_found_title" }}
+{{- end -}}
+
+{{ define "main" }}
+<div class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <!-- Error Icon -->
+            <div class="error-icon">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="55" stroke="#E5E7EB" stroke-width="10" stroke-dasharray="10 10"/>
+                    <path d="M30 45C30 38.3726 35.3726 33 42 33H78C84.6274 33 90 38.3726 90 45V75C90 81.6274 84.6274 87 78 87H42C35.3726 87 30 81.6274 30 75V45Z" fill="#F3F4F6"/>
+                    <path d="M42 42H78V78H42V42Z" fill="white"/>
+                    <circle cx="50" cy="54" r="4" fill="#9CA3AF"/>
+                    <circle cx="70" cy="54" r="4" fill="#9CA3AF"/>
+                    <path d="M50 70C50 70 55 65 60 65C65 65 70 70 70 70" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            
+            <!-- Error Title -->
+            <h1 class="error-title">404</h1>
+            <h2 class="error-subtitle">{{ i18n "page_not_found" }}</h2>
+            
+            <!-- Error Message -->
+            <p class="error-message">
+                {{ i18n "page_not_found_sorry" }}
+            </p>
+            
+            <!-- Search Box -->
+            <div class="error-search">
+                <form class="search-form" action="{{ "/search/" | relLangURL }}" method="GET">
+                    <div class="search-input-group">
+                        <input 
+                            type="text" 
+                            name="q" 
+                            placeholder="{{ i18n "search_products_services" }}" 
+                            class="search-input"
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="search-button">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M19 19L13 13M15 8A7 7 0 1 1 1 8A7 7 0 0 1 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="error-links">
+                <h3>{{ i18n "recommended_pages" }}</h3>
+                <div class="link-grid">
+                    <a href="{{ "/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">🏠</div>
+                        <span>{{ i18n "return_home" }}</span>
+                    </a>
+                    <a href="{{ "/products/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">🔧</div>
+                        <span>{{ i18n "product_catalog" }}</span>
+                    </a>
+                    <a href="{{ "/tech/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">📈</div>
+                        <span>{{ i18n "case_studies" }}</span>
+                    </a>
+                    <a href="{{ "/opportunities/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">💼</div>
+                        <span>{{ i18n "opportunities" }}</span>
+                    </a>
+                    <a href="{{ "/contact/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">📞</div>
+                        <span>{{ i18n "contact_us" }}</span>
+                    </a>
+                    <a href="{{ "/news/" | relLangURL }}" class="quick-link">
+                        <div class="link-icon">📰</div>
+                        <span>{{ i18n "news_updates" }}</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="error-contact">
+                <p>{{ i18n "contact_if_error" }}</p>
+                <a href="mailto:maoxp@smpolymer.com" class="contact-email">
+                    maoxp@smpolymer.com
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    min-height: calc(100vh - var(--header-height) - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8) 0;
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
+}
+
+.error-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-icon {
+    margin-bottom: var(--space-8);
+    opacity: 0.8;
+}
+
+.error-title {
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-4);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.error-subtitle {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-6);
+}
+
+.error-message {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Search Form */
+.error-search {
+    margin-bottom: var(--space-12);
+}
+
+.search-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.search-input-group:focus-within {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.search-input {
+    flex: 1;
+    padding: var(--space-4) var(--space-6);
+    border: none;
+    outline: none;
+    font-size: var(--font-size-base);
+    background: transparent;
+}
+
+.search-button {
+    padding: var(--space-4);
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background: var(--color-primary);
+}
+
+/* Quick Links */
+.error-links h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-6);
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+}
+
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-6);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-xs);
+}
+
+.quick-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.link-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-3);
+    filter: grayscale(1);
+    transition: filter var(--transition-fast);
+}
+
+.quick-link:hover .link-icon {
+    filter: grayscale(0);
+}
+
+.quick-link span {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+}
+
+/* Contact Info */
+.error-contact {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.error-contact p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+    font-size: var(--font-size-sm);
+}
+
+.contact-email {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+}
+
+.contact-email:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .error-page {
+        padding: var(--space-6) 0;
+    }
+    
+    .error-content {
+        padding: 0 var(--space-4);
+    }
+    
+    .error-title {
+        font-size: clamp(3rem, 12vw, 6rem);
+    }
+    
+    .error-subtitle {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+    }
+    
+    .quick-link {
+        padding: var(--space-4);
+    }
+    
+    .link-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-form {
+        max-width: 100%;
+    }
+    
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{{ end }}
