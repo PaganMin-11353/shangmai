@@ -1,6 +1,7 @@
-baseURL = "https://example.com/"
+# baseURL = "https://<username>.github.io/<repo>/"
+# baseURL = "https://example.com"
 title = "Shangmai Polymer"
-theme = "shangmai-default"
+theme = "shangmai-test"
 
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
@@ -8,7 +9,7 @@ enableRobotsTXT = true
 
 [params]
   primary = "#0B5FFF"
-  logo = "/logo.svg"
+  logo = "/images/logo/logo-main.gif"
   description = "Shangmai 尚迈 · 企业官网"
 
 [languages]
@@ -16,13 +17,15 @@ enableRobotsTXT = true
   [languages.zh]
     languageName = "中文"
     weight = 1
+    [languages.zh.params]
+      flag = "🇨🇳"
     [languages.zh.menu]
       [[languages.zh.menu.main]] 
         name = "首页" 
         url = "/zh/" 
         weight = 1
       [[languages.zh.menu.main]] 
-        name = "技术展示" 
+        name = "案例展示" 
         url = "/zh/tech/" 
         weight = 2
       [[languages.zh.menu.main]] 
@@ -30,8 +33,8 @@ enableRobotsTXT = true
         url = "/zh/products/" 
         weight = 3
       [[languages.zh.menu.main]] 
-        name = "资质证书" 
-        url = "/zh/certis/" 
+        name = "工作机会" 
+        url = "/zh/opportunities/" 
         weight = 4
       [[languages.zh.menu.main]] 
         name = "新闻" 
@@ -45,13 +48,15 @@ enableRobotsTXT = true
   [languages.en]
     languageName = "English"
     weight = 2
+    [languages.en.params]
+      flag = "🇺🇸"
     [languages.en.menu]
       [[languages.en.menu.main]] 
         name = "Home" 
         url = "/en/" 
         weight = 1
       [[languages.en.menu.main]] 
-        name = "Technology" 
+        name = "Project" 
         url = "/en/tech/" 
         weight = 2
       [[languages.en.menu.main]] 
@@ -59,8 +64,8 @@ enableRobotsTXT = true
         url = "/en/products/" 
         weight = 3
       [[languages.en.menu.main]] 
-        name = "Certificates" 
-        url = "/en/certis/" 
+        name = "Opportunities" 
+        url = "/en/opportunities/" 
         weight = 4
       [[languages.en.menu.main]] 
         name = "News" 
@@ -74,22 +79,24 @@ enableRobotsTXT = true
   [languages.ja]
     languageName = "日本語"
     weight = 3
+    [languages.ja.params]
+      flag = "🇯🇵"
     [languages.ja.menu]
       [[languages.ja.menu.main]] 
         name = "ホーム" 
         url = "/ja/" 
         weight = 1
       [[languages.ja.menu.main]] 
-        name = "技術紹介" 
+        name = "お客様事例" 
         url = "/ja/tech/" 
         weight = 2
       [[languages.ja.menu.main]] 
-        name = "製品一覧" 
+        name = "製品" 
         url = "/ja/products/" 
         weight = 3
       [[languages.ja.menu.main]] 
-        name = "認証・資格" 
-        url = "/ja/certis/" 
+        name = "採用" 
+        url = "/ja/opportunities/" 
         weight = 4
       [[languages.ja.menu.main]] 
         name = "ニュース" 
@@ -98,4 +105,35 @@ enableRobotsTXT = true
       [[languages.ja.menu.main]] 
         name = "お問い合わせ" 
         url = "/ja/contact/" 
+        weight = 6
+
+  [languages.ms]
+    languageName = "Bahasa Melayu"
+    weight = 4
+    [languages.ms.params]
+      flag = "🇲🇾"
+    [languages.ms.menu]
+      [[languages.ms.menu.main]] 
+        name = "Utama" 
+        url = "/ms/" 
+        weight = 1
+      [[languages.ms.menu.main]] 
+        name = "Projek" 
+        url = "/ms/tech/" 
+        weight = 2
+      [[languages.ms.menu.main]] 
+        name = "Produk" 
+        url = "/ms/products/" 
+        weight = 3
+      [[languages.ms.menu.main]] 
+        name = "Kerjaya" 
+        url = "/ms/opportunities/" 
+        weight = 4
+      [[languages.ms.menu.main]] 
+        name = "Berita" 
+        url = "/ms/news/" 
+        weight = 5
+      [[languages.ms.menu.main]] 
+        name = "Hubungi" 
+        url = "/ms/contact/" 
         weight = 6
