@@ -1,0 +1,15 @@
+---
+title: "Analysis of Density and Hardness Testing of Rubber Shock Absorber Blocks"
+date: 2010-06-12
+category: "Rubber Damping Pad"
+tags: ["Rubber Damping Pad", "Rubber Products", "Industrial Materials"]
+draft: false
+---
+
+In this article, we will analyze the density and hardness testing of [rubber shock absorber blocks](http://www.smpolymer.com/). The density of vulcanized rubber refers to the mass of vulcanized rubber per unit volume at a certain temperature, measured in mg/m3. Density is not a very important parameter for rubber shock absorber blocks. Standards: GB/T 533-91, equivalent to ISO 2781-1998. GB Standard: The testing principle for rubber shock absorber blocks is Archimedes' principle. Density of rubber shock absorber block sample = mass of sample in air / (mass of sample in air - mass of sample in water) × density of distilled water. Test Method A: Testing method for vulcanized rubber shock absorber block samples without pores. Test Method B: Suitable for vulcanized rubber shock absorber blocks with pores. The sample should be sheet-form vulcanized [silicone sealing rings](http://www.smpolymer.com/) with mass no less than 2.5g. For internal quality control tests, sample mass should be no less than 1g. Samples should have no bubbles, cracks, or impurities and should have smooth surfaces. Rubber shock absorber block hardness testing mainly uses the Shore A hardness test method for vulcanized rubber. Under specified pressure, the resistance of a [V-type sealing ring](http://www.smpolymer.com/) with a certain shape against penetration. This represents the rubber's ability to resist external pressure intrusion. All types of rubber require certain hardness, and different products have different requirements. The national standard for rubber shock absorber block Shore A hardness testing is GB/T 531-92, referencing ISO 7619-1986. When testing [rubber damping pad](http://www.smpolymer.com/xiangjiaojianzhendian/) hardness, pay attention to the following points: ① The measurement range of the durometer should be between 20-90. If it exceeds this range, the gauge head should be replaced. Reading time: 1s (some specifications require 15s reading time). ② Sample thickness should not be less than 6mm. If sample thickness is insufficient, multiple layers can be stacked, but [flexible rubber joints](http://www.smpolymer.com/kequnaoxiangjiaojietou/) should not exceed three layers. The measurement surface dimensions should meet the next requirement. ③ Each point on the sample can only be tested once. The distance between measurement points should not be less than 6mm, and the distance from sample edges should not be less than 12mm.
+
+----Original article published by: ◆Shanghai Shangmai [Rubber Factory](http://www.smpolymer.com/)◆, Please indicate the source when reprinting!
+
+---
+
+*Originally published by: Shanghai Shangmai Rubber Factory, Please indicate the source when reprinting!*

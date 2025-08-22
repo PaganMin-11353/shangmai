@@ -1,0 +1,15 @@
+---
+title: "Analisis Ujian Ketumpatan dan Kekerasan Blok Penyerap Kejutan Getah"
+date: 2010-06-12
+category: "Pad Peredam Getah"
+tags: ["Pad Peredam Getah", "Produk Getah", "Bahan Perindustrian"]
+draft: false
+---
+
+Dalam artikel ini, kami akan menganalisis ujian ketumpatan dan kekerasan [blok penyerap kejutan getah](http://www.smpolymer.com/). Ketumpatan getah tervulkan merujuk kepada jisim getah tervulkan per unit isipadu pada suhu tertentu, diukur dalam mg/m3. Ketumpatan bukanlah parameter yang sangat penting untuk blok penyerap kejutan getah. Piawaian: GB/T 533-91, bersamaan dengan ISO 2781-1998. Piawaian GB: Prinsip ujian untuk blok penyerap kejutan getah ialah prinsip Archimedes. Ketumpatan sampel blok penyerap kejutan getah = jisim sampel dalam udara / (jisim sampel dalam udara - jisim sampel dalam air) × ketumpatan air suling. Kaedah Ujian A: Kaedah ujian untuk sampel blok penyerap kejutan getah tervulkan tanpa liang. Kaedah Ujian B: Sesuai untuk blok penyerap kejutan getah tervulkan dengan liang. Sampel hendaklah berbentuk helaian getah tervulkan [cincin pengedap silikon](http://www.smpolymer.com/) dengan jisim tidak kurang daripada 2.5g. Untuk ujian kawalan kualiti dalaman, jisim sampel hendaklah tidak kurang daripada 1g. Sampel hendaklah tidak mempunyai buih, retakan, atau kekotoran dan hendaklah mempunyai permukaan yang licin. Ujian kekerasan blok penyerap kejutan getah terutamanya menggunakan kaedah ujian kekerasan Shore A untuk getah tervulkan. Di bawah tekanan yang ditetapkan, rintangan [cincin pengedap jenis V](http://www.smpolymer.com/) dengan bentuk tertentu terhadap penembusan. Ini mewakili keupayaan getah untuk menahan pencerobohan tekanan luar. Semua jenis getah memerlukan kekerasan tertentu, dan produk yang berbeza mempunyai keperluan yang berbeza. Piawaian kebangsaan untuk ujian kekerasan Shore A blok penyerap kejutan getah ialah GB/T 531-92, merujuk ISO 7619-1986. Semasa menguji kekerasan [pad peredam getah](http://www.smpolymer.com/xiangjiaojianzhendian/), beri perhatian kepada perkara berikut: ① Julat pengukuran durometer hendaklah antara 20-90. Jika melebihi julat ini, kepala tolok hendaklah diganti. Masa bacaan: 1s (sesetengah spesifikasi memerlukan masa bacaan 15s). ② Ketebalan sampel hendaklah tidak kurang daripada 6mm. Jika ketebalan sampel tidak mencukupi, beberapa lapisan boleh disusun, tetapi [sambungan getah fleksibel](http://www.smpolymer.com/kequnaoxiangjiaojietou/) tidak boleh melebihi tiga lapisan. Dimensi permukaan pengukuran hendaklah memenuhi keperluan seterusnya. ③ Setiap titik pada sampel hanya boleh diuji sekali. Jarak antara titik pengukuran hendaklah tidak kurang daripada 6mm, dan jarak dari tepi sampel hendaklah tidak kurang daripada 12mm.
+
+----Artikel asal diterbitkan oleh: ◆Shanghai Shangmai [Kilang Getah](http://www.smpolymer.com/)◆, Sila nyatakan sumber semasa mencetak semula!
+
+---
+
+*Asalnya diterbitkan oleh: Kilang Getah Shanghai Shangmai, Sila nyatakan sumber semasa mencetak semula!*

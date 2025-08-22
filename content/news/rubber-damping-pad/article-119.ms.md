@@ -1,0 +1,13 @@
+---
+title: "Eksperimen Ujian Tegangan untuk Blok Penyerap Kejutan Getah"
+date: 2010-06-12
+category: "Pad Peredam Getah"
+tags: ["Pad Peredam Getah", "Produk Getah", "Bahan Perindustrian"]
+draft: false
+---
+
+Eksperimen ujian tegangan untuk [blok penyerap kejutan getah](http://www.smpolymer.com/) terutamanya termasuk kekuatan tegangan, kekuatan patah blok penyerap kejutan getah, pemanjangan pada patah, tegasan blok penyerap kejutan getah pada pemanjangan tertentu, pemanjangan pada tegasan tertentu, tegasan tegangan titik hasil, pemanjangan titik hasil, dan set kekal selepas pecah. Piawaian: GB/T 528-92, ISO/DIS 37-1990. Semasa menjalankan ujian tegangan blok penyerap kejutan getah, beri perhatian kepada perkara berikut: ① Jenis spesimen (berbeza daripada [cincin pengedap jenis V](http://www.smpolymer.com/)). Spesimen termasuk spesimen jenis dumbbell (seperti ditunjukkan dalam Jadual 3-1) dan spesimen cincin. Jadual 3-1 Spesimen Tegangan Jenis Dumbbell: Jenis 1, Jenis 2, Jenis 3, Jenis 4 - Panjang keseluruhan (minimum) L: 115, 75, 35, 50; Lebar hujung We: 25±1, 12.5±1.0, 6.0±0.5, 8.5±0.5; Panjang bahagian selari sempit Ln: 33±2, 25±1, 12.0±0.5, 16.0±1.0; Lebar bahagian selari sempit W: 4.0±0.1, 2.0±0.1, 4.0±0.1; Diukur [pad peredam getah](http://www.smpolymer.com/xiangjiaojianzhendian/) diameter luar tepi peralihan Ro: 14±1, 8.0±0.5, 3.0±0.1, 7.5±0.5; Diukur diameter dalam tepi peralihan pad peredam getah Ri: 25±2, 12.5±1.0, 3.0±0.1, 10.0±0.5; Panjang tolok awal blok penyerap kejutan getah: 25.0±0.5, 20.0±0.5, 10.0±0.5, 10.0±0.5; Ketebalan spesimen blok penyerap kejutan getah mm: 2.0±0.2, 2.0±0.2, 1.0±0.2, 2.0±0.2. Apabila dipotong dari produk, ketebalan mungkin berbeza, tetapi keputusan antara ketebalan berbeza tidak boleh dibandingkan. Spesimen cincin ialah Ф44.6±0.2mm dengan diameter dalam 36.6mm. Ketebalan 4.0±0.2mm. ② Kaedah penyediaan spesimen: Spesimen cincin boleh dipotong dengan mengecop sekali atau dua kali, atau dipotong dengan kaedah berputar pada helaian getah yang dibentuk. Selain itu, ia boleh disediakan terus menggunakan kaedah acuan. ③ Keadaan ujian blok penyerap kejutan getah: Kelajuan tegangan ujian Jenis 1 dan 2 ialah 500±50mm/min. Kelajuan tegangan ujian Jenis 3 dan 4 ialah 200±20mm/min. Kelajuan tegangan spesimen cincin ialah 500±50mm/min.
+
+---
+
+*Asalnya diterbitkan oleh: Kilang Getah Shanghai Shangmai, Sila nyatakan sumber semasa mencetak semula!*

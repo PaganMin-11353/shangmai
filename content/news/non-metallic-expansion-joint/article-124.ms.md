@@ -1,0 +1,15 @@
+---
+title: "Pengenalan Ujian Rintangan Ozon Sambungan Pengembangan Bukan Logam"
+date: 2010-06-23
+category: "Sambungan Pengembangan Bukan Logam"
+tags: ["Sambungan Pengembangan Bukan Logam", "Produk Getah", "Bahan Perindustrian"]
+draft: false
+---
+
+Tujuan ujian penuaan ozon untuk [sambungan pengembangan bukan logam](http://www.smpolymer.com/feijinshupengzhangjie/) adalah untuk mengkaji tingkah laku penuaan getah di bawah tindakan ozon, mengenal pasti dengan cepat rintangan penuaan ozon getah tervulkan, menilai kesan perlindungan agen anti-penuaan ozon, atau menyediakan asas untuk meningkatkan jangka hayat perkhidmatan produk getah. Piawaian: GB 7762-87, ISO 1431/1-1980. Dalam ujian rintangan penuaan ozon, perhatian harus diberikan kepada perkara berikut: ① Spesifikasi spesimen sambungan pengembangan bukan logam. Spesimen termasuk spesimen segi empat tepat dan spesimen berbentuk dumbbell. Spesifikasi spesimen segi empat tepat: panjang 70-100mm (panjang berkesan harus lebih daripada 40mm), lebar 10±0.5mm, ketebalan 2.0±0.2mm. Untuk ujian patah [sambungan pengembangan getah](http://www.smpolymer.com/xiangjiaopengzhangjie/), spesimen segi empat tepat dengan lebar 5±0.1mm dan ketebalan 0.5±0.05 atau 1±0.1mm juga boleh digunakan. Spesifikasi ujian sambungan pengembangan bukan logam berbentuk dumbbell: Spesifikasi spesimen tegangan Jenis 1 atau Jenis 2 yang dinyatakan dalam GB528-82. ② Keadaan ujian berkaitan dengan [cincin meterai jenis-V](http://www.smpolymer.com/) (termasuk kepekatan ozon, suhu, kadar pemanjangan, dll.) Kepekatan ozon termasuk 25±5, 50±5, 100±10, 200±20, 500±50 atau 1000±100, dll. Untuk getah tervulkan am, 50±5pphm biasanya digunakan; untuk getah tervulkan yang lebih tahan penuaan, kepekatan ozon yang lebih tinggi harus digunakan. Suhu ujian yang paling sesuai ialah 40±2°C. Suhu ujian lain (seperti 30±2°C atau 23±2°C) juga boleh digunakan mengikut persekitaran operasi atau keadaan kawalan suhu peralatan, tetapi tidak boleh melebihi 60°C. Keputusan pada suhu berbeza tidak boleh dibandingkan antara satu sama lain. Kadar aliran purata udara ozon ke dalam sambungan pengembangan bukan logam hendaklah tidak kurang daripada 8mm/s, lebih baik antara 12-16mm/s. Atau kadar aliran udara yang mengandungi ozon hendaklah mempunyai isipadu penggantian setiap minit bersamaan dengan 3/4 daripada isipadu kotak. Kadar pemanjangan termasuk (%) 5±1, 10±1, 15±2, 20±2, 30±2, 40±2, 50±2, 60±2, 80±2. Jika hanya satu kadar pemanjangan digunakan, 20% biasanya diterima pakai. ② Penunjuk penilaian dan kaedah untuk sambungan pengembangan bukan logam dinyatakan mengikut masa permulaan retak; dinyatakan mengikut masa patah; dinyatakan mengikut masa retak halus.
+
+----Artikel asal diterbitkan oleh: ◆Shanghai Shangmai [Kilang Getah](http://www.smpolymer.com/)◆, Sila nyatakan sumber semasa mencetak semula!
+
+---
+
+*Asal diterbitkan oleh: Kilang Getah Shanghai Shangmai, Sila nyatakan sumber semasa mencetak semula!*

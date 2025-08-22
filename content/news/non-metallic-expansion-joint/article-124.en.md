@@ -1,0 +1,15 @@
+---
+title: "Introduction to Ozone Resistance Testing of Non-Metallic Expansion Joints"
+date: 2010-06-23
+category: "Non-Metallic Expansion Joint"
+tags: ["Non-Metallic Expansion Joint", "Rubber Products", "Industrial Materials"]
+draft: false
+---
+
+The purpose of ozone aging testing for [non-metallic expansion joints](http://www.smpolymer.com/feijinshupengzhangjie/) is to study the aging behavior of rubber under ozone action, rapidly identify the ozone aging resistance of vulcanized rubber, evaluate the protective effect of anti-ozone aging agents, or provide a basis for improving the service life of rubber products. Standards: GB 7762-87, ISO 1431/1-1980. In ozone aging resistance testing, attention should be paid to the following points: ① Non-metallic expansion joint specimen specifications. Specimens include rectangular specimens and dumbbell-shaped specimens. Rectangular specimen specifications: length 70-100mm (effective length should be greater than 40mm), width 10±0.5mm, thickness 2.0±0.2mm. For [rubber expansion joint](http://www.smpolymer.com/xiangjiaopengzhangjie/) fracture testing, rectangular specimens with width 5±0.1mm and thickness 0.5±0.05 or 1±0.1mm can also be used. Dumbbell-shaped non-metallic expansion joint test specifications: Type 1 or Type 2 tensile specimen specifications specified in GB528-82. ② Test conditions related to [V-type sealing rings](http://www.smpolymer.com/) (including ozone concentration, temperature, elongation rate, etc.) Ozone concentrations include 25±5, 50±5, 100±10, 200±20, 500±50 or 1000±100, etc. For general vulcanized rubber, 50±5pphm is generally used; for more aging-resistant vulcanized rubber, higher ozone concentrations should be used. The most suitable test temperature should be 40±2°C. Other test temperatures (such as 30±2°C or 23±2°C) can also be used according to the operating environment or equipment temperature control conditions, but should not exceed 60°C. Results at different temperatures cannot be compared with each other. The average flow rate of ozone air into non-metallic expansion joints should be no less than 8mm/s, preferably between 12-16mm/s. Or the flow rate of ozone-containing air should have a replacement volume per minute equal to 3/4 of the box volume. Elongation rates include (%) 5±1, 10±1, 15±2, 20±2, 30±2, 40±2, 50±2, 60±2, 80±2. If only one elongation rate is used, 20% is generally adopted. ③ Evaluation indicators and methods for non-metallic expansion joints are expressed by crack initiation time; expressed by fracture time; expressed by crazing time.
+
+----Original article published by: ◆Shanghai Shangmai [Rubber Factory](http://www.smpolymer.com/)◆, Please cite the source when reprinting!
+
+---
+
+*Originally published by: Shanghai Shangmai Rubber Factory, Please cite the source when reprinting!*
