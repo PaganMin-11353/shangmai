@@ -3,6 +3,7 @@
 /resources/
 /resources/_gen/
 /.hugo_build.lock
+/themes/*/.hugo_build.lock
 
 # Optional: PostCSS/PurgeCSS stats file — track it if you use it
 hugo_stats.json
