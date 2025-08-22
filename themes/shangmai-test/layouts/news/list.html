@@ -1,0 +1,374 @@
+{{ define "main" }}
+<div class="section-sm">
+    <div class="container">
+        <!-- Page Header -->
+        <header class="text-center" style="margin-bottom: var(--space-16);">
+            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4);">
+                {{ i18n "news_center" }}
+            </h1>
+            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); max-width: 700px; margin: 0 auto var(--space-6); line-height: var(--line-height-relaxed);">
+                {{ i18n "news_description" }}
+            </p>
+            
+            <!-- Search Bar -->
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div style="position: relative;">
+                    <input type="text" 
+                           id="search-input"
+                           placeholder="{{ i18n "search_news_placeholder" }}"
+                           aria-label="{{ i18n "search_news" }}"
+                           style="width: 100%; padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12); border: 2px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--font-size-base); transition: border-color var(--transition-fast);"
+                           onfocus="this.style.borderColor='var(--color-secondary)'"
+                           onblur="this.style.borderColor='var(--color-border)'">
+                    <svg width="20" height="20" 
+                         fill="var(--color-text-muted)" 
+                         viewBox="0 0 24 24"
+                         style="position: absolute; left: var(--space-4); top: 50%; transform: translateY(-50%); pointer-events: none;">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Check if this is the main news page with categories -->
+        {{ if eq .RelPermalink (printf "/%s/news/" .Site.Language.Lang) }}
+        <!-- Category Grid Layout for Main News Page -->
+        {{ $categories := (slice 
+            (dict "name" "可曲挠橡胶接头" "slug" "flexible-rubber-joint" "description" "柔性橡胶接头相关技术文章和产品介绍")
+            (dict "name" "橡胶减震垫" "slug" "rubber-damping-pad" "description" "减震垫产品技术资料和应用案例")
+            (dict "name" "橡胶制品" "slug" "rubber-products" "description" "各类橡胶制品的技术文章和行业资讯")
+            (dict "name" "橡胶膨胀节" "slug" "rubber-expansion-joint" "description" "橡胶膨胀节产品介绍和技术规格")
+            (dict "name" "橡胶软接头" "slug" "rubber-soft-joint" "description" "橡胶软接头产品特性和应用领域")
+            (dict "name" "氟胶管" "slug" "fluorine-tube" "description" "氟胶管产品特点和技术参数")
+            (dict "name" "硅胶密封套" "slug" "silicone-sealing-sleeve" "description" "硅胶密封套产品介绍和使用指南")
+            (dict "name" "硅胶管" "slug" "silicone-tube" "description" "硅胶管产品规格和应用案例")
+            (dict "name" "非金属膨胀节" "slug" "non-metallic-expansion-joint" "description" "非金属膨胀节技术特点和产品优势")
+            (dict "name" "高压密封圈" "slug" "high-pressure-sealing-ring" "description" "高压密封圈产品性能和技术指标")
+            (dict "name" "V型夹布密封圈" "slug" "v-type-fabric-sealing-ring" "description" "V型夹布密封圈结构特点和应用范围")
+        ) }}
+        
+        <div class="category-grid" id="content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-16);">
+            {{ range $categories }}
+            {{ $categoryPath := printf "/content/news/%s" .slug }}
+            {{ $categoryArticles := where (where $.Site.RegularPages "Section" "news") ".Params.category" .name }}
+            {{ $articleCount := len $categoryArticles }}
+            <a href="{{ printf "/news/%s/" .slug | relLangURL }}" class="category-card-link" style="text-decoration: none; color: inherit; display: block;">
+                <article class="category-card scale-in" data-tags="{{ .name | lower }}" data-title="{{ .name | lower }}">
+                    <!-- Icon instead of image for news categories -->
+                    <div class="category-icon-container" style="position: relative; display: flex; align-items: center; justify-content: center; height: 120px; background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); border-radius: var(--radius-lg); margin-bottom: var(--space-4);">
+                        <svg width="48" height="48" fill="white" viewBox="0 0 24 24">
+                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        </svg>
+                        
+                        <div class="category-badge" style="position: absolute; top: var(--space-3); right: var(--space-3); background: rgba(255, 255, 255, 0.9); color: var(--color-primary); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">
+                            {{ $articleCount }} {{ i18n "articles_count" }}
+                        </div>
+                    </div>
+                    
+                    <div class="category-info">
+                        <h3 class="category-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-3); line-height: var(--line-height-tight); transition: color var(--transition-fast);">
+                            {{ .name }}
+                        </h3>
+                        <p class="category-description" style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed); font-size: var(--font-size-sm);">
+                            {{ .description }}
+                        </p>
+                        
+                        <div style="display: flex; gap: var(--space-3); align-items: center; justify-content: space-between;">
+                            <span class="btn btn-outline" style="pointer-events: none; font-size: var(--font-size-sm);">
+                                {{ i18n "view_articles" }}
+                            </span>
+                            <span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                                {{ $articleCount }} {{ i18n "articles_unit" }}
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            {{ end }}
+        </div>
+        
+        {{ else if .Pages }}
+        <!-- Article List Layout for Category Pages -->
+        <div class="article-grid" id="content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-6);">
+            {{ range .Pages }}
+            <article class="article-card scale-in" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}" data-title="{{ .Title | lower }}">
+                <div class="article-header" style="margin-bottom: var(--space-4);">
+                    <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+                        {{ if .Params.category }}
+                        <span class="article-category" style="background: var(--color-secondary); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold);">
+                            {{ .Params.category }}
+                        </span>
+                        {{ end }}
+                        {{ if .Date }}
+                        <time datetime="{{ .Date.Format "2006-01-02" }}" style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                            {{ .Date.Format "2006-01-02" }}
+                        </time>
+                        {{ end }}
+                    </div>
+                    
+                    <h3 class="article-title" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-3); line-height: var(--line-height-tight);">
+                        <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none; transition: color var(--transition-fast);" 
+                           onmouseover="this.style.color='var(--color-secondary)'"
+                           onmouseout="this.style.color='inherit'">
+                            {{ .Title }}
+                        </a>
+                    </h3>
+                </div>
+                
+                <div class="article-content" style="margin-bottom: var(--space-4);">
+                    <p class="article-excerpt" style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); font-size: var(--font-size-base);">
+                        {{ .Summary | truncate 150 }}
+                    </p>
+                </div>
+                
+                {{ if .Params.tags }}
+                <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4);">
+                    {{ range first 3 .Params.tags }}
+                    <span class="article-tag" style="background: var(--color-background-secondary); color: var(--color-text-secondary); padding: var(--space-1) var(--space-2); border-radius: var(--radius-base); font-size: var(--font-size-xs);">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="article-actions">
+                    <a href="{{ .RelPermalink }}" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                        {{ i18n "read_article" }}
+                    </a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        {{ else }}
+        <!-- Empty State -->
+        <div class="text-center" style="padding: var(--space-16) 0;">
+            <div style="max-width: 400px; margin: 0 auto;">
+                <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                </svg>
+                <h2 style="margin-bottom: var(--space-2);">{{ i18n "no_articles" }}</h2>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                    {{ i18n "articles_coming_soon" }}
+                </p>
+                <a href="{{ .Site.BaseURL }}" class="btn btn-primary">{{ i18n "back_to_home" }}</a>
+            </div>
+        </div>
+        {{ end }}
+        
+        <!-- No Results Message -->
+        <div id="no-results" style="display: none; text-align: center; padding: var(--space-16) 0;">
+            <div style="max-width: 400px; margin: 0 auto;">
+                <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <h3 style="margin-bottom: var(--space-2);">
+                    {{ i18n "no_results_found" }}
+                </h3>
+                <p style="color: var(--color-text-secondary);">
+                    {{ i18n "adjust_search_news" }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Enhanced Search and Filter Functionality for News
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const contentGrid = document.getElementById('content-grid');
+    const noResults = document.getElementById('no-results');
+    
+    if (searchInput && contentGrid) {
+        let allItems = Array.from(contentGrid.children);
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+            
+            allItems.forEach(item => {
+                const title = item.getAttribute('data-title') || '';
+                const tags = item.getAttribute('data-tags') || '';
+                const text = item.textContent.toLowerCase();
+                
+                const isVisible = searchTerm === '' || 
+                    title.includes(searchTerm) || 
+                    tags.includes(searchTerm) || 
+                    text.includes(searchTerm);
+                
+                if (isVisible) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results message
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
+            }
+        });
+        
+        // Clear search with Escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                this.dispatchEvent(new Event('input'));
+                this.blur();
+            }
+        });
+    }
+});
+</script>
+
+<style>
+/* News Category and Article Card Styles */
+.category-card,
+.article-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-border);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card-link:hover .category-card,
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.category-card-link:hover .category-title {
+    color: var(--color-secondary) !important;
+}
+
+.category-card-link:hover .category-icon-container {
+    transform: scale(1.02);
+}
+
+/* Icon container styling */
+.category-icon-container {
+    transition: transform var(--transition-normal);
+}
+
+/* Ensure equal height cards */
+.category-info,
+.article-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card .category-info > div:last-child,
+.article-card .article-actions {
+    margin-top: auto;
+}
+
+/* Search Input Focus States */
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.1);
+}
+
+/* Animation for cards */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    font-size: var(--font-size-sm);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.btn-outline:hover {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.btn-primary {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-grid,
+    .article-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-4);
+    }
+    
+    .category-card,
+    .article-card {
+        padding: var(--space-4);
+    }
+    
+    .category-icon-container {
+        height: 100px !important;
+    }
+    
+    .category-icon-container svg {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .category-card,
+    .article-card {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .scale-in {
+        animation: none;
+    }
+    
+    .category-card:hover,
+    .article-card:hover {
+        transform: none;
+    }
+    
+    .category-icon-container {
+        transition: none !important;
+    }
+}
+</style>
+{{ end }}

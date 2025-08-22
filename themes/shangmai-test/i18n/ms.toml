@@ -1,0 +1,352 @@
+[nav_home] 
+    other = "Laman Utama"
+[nav_tech] 
+    other = "Projek"
+[nav_products] 
+    other = "Produk"
+[nav_certs] 
+    other = "Sijil"
+[nav_news] 
+    other = "Berita"
+[nav_contact] 
+    other = "Hubungi Kami"
+[learn_more] 
+    other = "Ketahui lebih lanjut"
+[search_placeholder] 
+    other = "Cari produk…"
+[lang_zh] 
+    other = "中文"
+[lang_en] 
+    other = "English"
+[lang_ja] 
+    other = "日本語"
+[lang_my] 
+    other = "Bahasa Melayu"
+
+# Footer translations
+[quick_links]
+    other = "Pautan Pantas"
+[contact_information]
+    other = "Maklumat Hubungan"
+[mobile]
+    other = "Telefon Bimbit"
+[fax]
+    other = "Faks"
+[email]
+    other = "E-mel"
+[business_hours]
+    other = "Waktu Perniagaan"
+[company_description]
+    other = "Pengilang bahan polimer profesional, memberi tumpuan kepada pembangunan dan pengeluaran produk getah berkualiti tinggi"
+[address_label]
+    other = "Alamat"
+[postal_code_label]
+    other = "Kod Pos"
+[privacy_policy]
+    other = "Dasar Privasi"
+[terms_of_service]
+    other = "Syarat Perkhidmatan"
+[cookie_policy]
+    other = "Dasar Cookie"
+[sitemap]
+    other = "Peta Laman"
+[all_rights_reserved]
+    other = "Hak cipta terpelihara"
+[company_name]
+    other = "Shanghai Shangmai Polymer Materials Co., Ltd."
+[address_content]
+    other = "No. 370 Xinni Road, Nicheng Town, Pudong New Area, Shanghai, China"
+
+# Home page translations
+[hero_title]
+    other = "Shangmai Polymer Innovation"
+[hero_subtitle]
+    other = "Pengeluar terkemuka bahan polimer berprestasi tinggi dan penyelesaian industri, pakar dalam komponen pengedap dan produk peredam getaran"
+[explore_products]
+    other = "Terokai Produk"
+[contact_us_cta]
+    other = "Hubungi Kami"
+
+# Timeline section
+[timeline_title]
+    other = "EVOLUSI SEJARAH"
+[timeline_subtitle]
+    other = "Sejarah Syarikat"
+[future_goals]
+    other = "Matlamat Masa Depan"
+
+# Timeline events (adapted for Malaysian/ASEAN market)
+[timeline_2008_title]
+    other = "Penubuhan Shanghai Shangmai Polymer Materials Co., Ltd."
+[timeline_2008_desc]
+    other = "Ditubuhkan di Shanghai, pada awalnya tertumpu kepada R&D dan pembuatan produk getah asas, meletakkan asas dalam industri polimer"
+
+[timeline_2012_title]
+    other = "Penyeragaman Proses Pengeluaran Dicapai"
+[timeline_2012_desc]
+    other = "Menubuhkan sistem pengurusan kualiti yang menyeluruh, meningkatkan kualiti produk melalui penyeragaman proses, dan membina pusat ujian profesional"
+
+[timeline_2017_title]
+    other = "Kejayaan R&D Komponen Pengedap Tekanan Ultra-Tinggi"
+[timeline_2017_desc]
+    other = "Membangunkan komponen pengedap tekanan ultra-tinggi untuk aplikasi termaju, berjaya melancarkan bladder minyak transformer dan produk berteknologi tinggi lain"
+
+[timeline_2019_title]
+    other = "Penubuhan Pusat R&D yang Diketuai Pakar Industri"
+[timeline_2019_desc]
+    other = "Mengupah pakar industri kanan untuk membina pasukan R&D profesional, memberikan sokongan kukuh untuk inovasi produk dan peningkatan teknikal"
+
+[timeline_2022_title]
+    other = "Penubuhan Jiangsu Shangmai New Materials Technology Co., Ltd."
+[timeline_2022_desc]
+    other = "Menubuhkan anak syarikat di Jiangsu, memperluaskan kapasiti pengeluaran, menambah baik susun atur industri serantau, dan meningkatkan keupayaan perkhidmatan"
+
+[timeline_2024_title]
+    other = "Jualan Tahunan Melebihi 10 Juta RMB"
+[timeline_2024_desc]
+    other = "Melalui penambahbaikan kualiti produk dan pengembangan pasaran, jualan tahunan melebihi 10 juta RMB buat kali pertama, menetapkan kedudukan industri"
+
+[timeline_future_desc]
+    other = "Dengan pertumbuhan berterusan industri automotif China dan pembuatan peralatan maju, kami merancang untuk menubuhkan laluan pengeluaran automatik sepenuhnya yang mampu menghasilkan 2,000 tan bahan polimer bergred dan 500,000 produk peredam getaran setiap tahun, mencapai pendapatan tahunan 50 juta RMB."
+
+# Header navigation and accessibility
+[nav_home_fallback]
+    other = "Laman Utama"
+[nav_products_fallback]
+    other = "Produk"
+[nav_about_fallback]
+    other = "Tentang Kami"
+[nav_contact_fallback]
+    other = "Hubungi Kami"
+[aria_goto_homepage]
+    other = "Pergi ke laman utama"
+[aria_main_navigation]
+    other = "Navigasi utama"
+[aria_select_language]
+    other = "Pilih bahasa"
+[aria_toggle_menu]
+    other = "Togol menu navigasi"
+
+# 404 Page translations
+[page_not_found]
+    other = "Halaman Tidak Ditemui"
+[page_not_found_title]
+    other = "Halaman Tidak Ditemui - 404"
+[page_not_found_sorry]
+    other = "Maaf, halaman yang anda cari tidak wujud. Mungkin pautan tersebut salah atau halaman telah dipindahkan."
+[search_products_services]
+    other = "Cari produk atau perkhidmatan..."
+[recommended_pages]
+    other = "Halaman Yang Disyorkan"
+[return_home]
+    other = "Kembali ke Laman Utama"
+[product_catalog]
+    other = "Katalog Produk"
+[case_studies]
+    other = "Kajian Kes"
+[opportunities]
+    other = "Peluang Kerjaya"
+[contact_us]
+    other = "Hubungi Kami"
+[news_updates]
+    other = "Berita & Kemaskini"
+[contact_if_error]
+    other = "Jika anda percaya ini adalah ralat, sila hubungi kami:"
+
+# Core template translations
+[skip_to_main_content]
+    other = "Langkau ke kandungan utama"
+[open_graph_title]
+    other = "Shanghai Shangmai Polymer Materials Co., Ltd."
+[open_graph_description]
+    other = "Pengilang bahan polimer profesional, memberi tumpuan kepada pembangunan dan pengeluaran produk getah berkualiti tinggi"
+[company_alt_name]
+    other = "Shanghai Shangmai Polymer Materials Co., Ltd."
+[site_name_short]
+    other = "Shangmai Polymer"
+[product_polymer_molded]
+    other = "Produk Acuan Polimer"
+[product_polymer_molded_desc]
+    other = "Produk acuan getah berpresisi"
+[product_special_sealing]
+    other = "Produk Pengedap Khas"
+[product_special_sealing_desc]
+    other = "Sistem pengedap berprestasi tinggi"
+
+# List page translations
+[search_content]
+    other = "Cari kandungan"
+[search_placeholder_generic]
+    other = "Cari"
+[featured]
+    other = "Pilihan Utama"
+[no_results_found]
+    other = "Tiada Hasil Ditemui"
+[adjust_search_terms]
+    other = "Cuba laraskan istilah carian anda atau layari semua kandungan di bawah"
+[no_content_available]
+    other = "Tiada Kandungan Tersedia"
+[no_content_message]
+    other = "Belum ada kandungan dalam bahagian ini. Sila kembali semula untuk kemaskini!"
+[back_to_home]
+    other = "Kembali ke Laman Utama"
+[previous]
+    other = "Sebelumnya"
+[next]
+    other = "Seterusnya"
+[go_to_previous_page]
+    other = "Pergi ke halaman sebelumnya"
+[go_to_next_page]
+    other = "Pergi ke halaman seterusnya"
+[page_info]
+    other = "Halaman {0} daripada {1}"
+[items_info]
+    other = "({0} daripada {1} jumlah)"
+
+# Single page translations
+[breadcrumb_home]
+    other = "Laman Utama"
+[by_author]
+    other = "Oleh"
+[min_read]
+    other = "minit baca"
+[table_of_contents]
+    other = "Kandungan"
+[share_this]
+    other = "Kongsi Ini"
+[related_articles]
+    other = "Artikel Berkaitan"
+[technical_specifications]
+    other = "Spesifikasi Teknikal"
+[back_to_section]
+    other = "Kembali ke {0}"
+[article_navigation]
+    other = "Navigasi artikel"
+
+# About page translations
+[company_story]
+    other = "Kisah Syarikat"
+[our_impact]
+    other = "Impak Kami"
+[years_of_innovation]
+    other = "Tahun Inovasi"
+[satisfied_customers]
+    other = "Pelanggan Berpuas Hati"
+[premium_products]
+    other = "Produk Premium"
+[expert_support]
+    other = "Sokongan Pakar"
+[our_core_values]
+    other = "Nilai Teras Kami"
+[excellence]
+    other = "Kecemerlangan"
+[excellence_desc]
+    other = "Kami berusaha untuk mencapai kecemerlangan dalam setiap produk dan perkhidmatan yang kami sampaikan, mengekalkan standard kualiti tertinggi."
+[innovation]
+    other = "Inovasi"
+[innovation_desc]
+    other = "Inovasi berterusan mendorong kami untuk menolak sempadan dan mencipta penyelesaian terdepan untuk pelanggan kami."
+[integrity]
+    other = "Integriti"
+[integrity_desc]
+    other = "Kami menjalankan perniagaan dengan kejujuran, ketelusan, dan amalan beretika dalam semua hubungan kami."
+[customer_focus]
+    other = "Fokus Pelanggan"
+[customer_focus_desc]
+    other = "Pelanggan kami adalah teras kepada semua yang kami lakukan, mendorong komitmen kami kepada perkhidmatan yang luar biasa."
+[ready_to_work]
+    other = "Bersedia untuk Bekerjasama dengan Kami?"
+[join_satisfied_customers]
+    other = "Sertai ribuan pelanggan yang berpuas hati yang mempercayai kami untuk keperluan polimer mereka."
+[view_products]
+    other = "Lihat Produk"
+
+# Products page translations
+[products_count]
+    other = "Produk"
+[view_category]
+    other = "Lihat Kategori"
+[browse_products]
+    other = "Layari Produk"
+
+# News page translations
+[news_center]
+    other = "Pusat Berita"
+[news_description]
+    other = "Artikel teknikal terkini, berita industri dan kemaskini produk daripada Shangmai Polymer"
+[search_news]
+    other = "Cari berita"
+[search_news_placeholder]
+    other = "Cari berita..."
+[articles_count]
+    other = "Artikel"
+[view_articles]
+    other = "Lihat Artikel"
+[articles_unit]
+    other = "artikel"
+[read_article]
+    other = "Baca Artikel"
+[no_articles]
+    other = "Tiada Artikel Tersedia"
+[articles_coming_soon]
+    other = "Kandungan artikel akan dikemaskini tidak lama lagi!"
+[adjust_search_news]
+    other = "Cuba laraskan istilah carian anda atau layari semua kategori artikel"
+[article_published_by]
+    other = "Diterbitkan oleh Shanghai Shangmai Polymer Materials Co., Ltd. Sila nyatakan sumber semasa menyiarkan semula."
+[contact_inquiry]
+    other = "Hubungi Kami"
+[contact_for_info]
+    other = "Hubungi kami untuk maklumat produk lanjut atau sokongan teknikal"
+[article_information]
+    other = "Maklumat Artikel"
+[category]
+    other = "Kategori"
+[published]
+    other = "Diterbitkan"
+[read_time]
+    other = "Masa Bacaan"
+[read_time_minutes]
+    other = "~{0} minit"
+[share_article]
+    other = "Kongsi Artikel"
+[back_to_news]
+    other = "Kembali ke Berita"
+
+# Tech page translations
+[tech_cases]
+    other = "Kes Teknologi"
+[technology]
+    other = "Teknologi"
+[adjust_search_cases]
+    other = "Cuba laraskan istilah carian anda atau layari semua kes"
+[technical_consultation]
+    other = "Perundingan Teknikal"
+[need_solutions]
+    other = "Memerlukan penyelesaian teknikal yang serupa? Hubungi pasukan pakar kami"
+[contact_expert]
+    other = "Hubungi Pakar"
+[related_cases]
+    other = "Kes Berkaitan"
+[back_to_cases]
+    other = "Kembali ke Kes"
+
+# Opportunities page translations
+[job_opportunities]
+    other = "Peluang Kerjaya"
+[adjust_search_jobs]
+    other = "Cuba laraskan istilah carian anda atau layari semua pekerjaan"
+[quick_apply]
+    other = "Mohon Pantas"
+[interested_position]
+    other = "Berminat dengan jawatan ini? Hubungi pasukan HR kami segera"
+[send_resume]
+    other = "Hantar Resume"
+[contact_hr]
+    other = "Hubungi HR"
+[requirements]
+    other = "Keperluan"
+[other_positions]
+    other = "Jawatan Lain"
+[back_to_jobs]
+    other = "Kembali ke Pekerjaan"

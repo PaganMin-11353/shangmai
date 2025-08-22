@@ -1,0 +1,352 @@
+[nav_home] 
+    other = "ホーム"
+[nav_tech] 
+    other = "プロジェクト"
+[nav_products] 
+    other = "製品一覧"
+[nav_certs] 
+    other = "認証・資格"
+[nav_news] 
+    other = "ニュース"
+[nav_contact] 
+    other = "お問い合わせ"
+[learn_more] 
+    other = "詳しく見る"
+[search_placeholder] 
+    other = "製品検索…"
+[lang_zh] 
+    other = "中文"
+[lang_en] 
+    other = "English"
+[lang_ja] 
+    other = "日本語"
+[lang_my] 
+    other = "Bahasa Melayu"
+
+# Footer translations
+[quick_links]
+    other = "クイックリンク"
+[contact_information]
+    other = "連絡先"
+[mobile]
+    other = "携帯電話"
+[fax]
+    other = "ファックス"
+[email]
+    other = "メール"
+[business_hours]
+    other = "営業時間"
+[company_description]
+    other = "プロフェッショナルなポリマー材料メーカー、高品質なゴム製品の開発と製造に特化"
+[address_label]
+    other = "住所"
+[postal_code_label]
+    other = "郵便番号"
+[privacy_policy]
+    other = "プライバシーポリシー"
+[terms_of_service]
+    other = "利用規約"
+[cookie_policy]
+    other = "Cookieポリシー"
+[sitemap]
+    other = "サイトマップ"
+[all_rights_reserved]
+    other = "全ての権利を保有"
+[company_name]
+    other = "上海尚迈高分子材料有限公司"
+[address_content]
+    other = "中国上海市浦東新区泥城鎮新泥路370号"
+
+# Home page translations  
+[hero_title]
+    other = "上海尚迈ポリマー材料有限公司"
+[hero_subtitle]
+    other = "高品質ポリマー材料と産業用ソリューションの専門メーカー、シール部品や防振製品に特化"
+[explore_products]
+    other = "製品を探す"
+[contact_us_cta]
+    other = "お問い合わせ"
+
+# Timeline section
+[timeline_title]
+    other = "歴史的発展"
+[timeline_subtitle]
+    other = "企業概要・沿革"
+[future_goals]
+    other = "将来の目標"
+
+# Timeline events (adapted for Japanese business culture)
+[timeline_2008_title]
+    other = "上海尚迈ポリマー材料有限公司設立"
+[timeline_2008_desc]
+    other = "上海において会社を設立し、初期は基本的なゴム製品の研究開発と製造に焦点を当て、ポリマー業界の基盤を築きました"
+
+[timeline_2012_title]
+    other = "製造プロセスの標準化と品質検査センター建設"
+[timeline_2012_desc]
+    other = "包括的な品質管理システムを確立し、プロセス標準化を通じて製品品質を向上させ、専門的な検査センターを建設しました"
+
+[timeline_2017_title]
+    other = "超高圧シール部品・変圧器用オイルブラダー開発成功"
+[timeline_2017_desc]
+    other = "高度な産業用途向けに超高圧シール部品を開発し、変圧器用オイルブラダーなどの高技術製品を成功裏に市場投入しました"
+
+[timeline_2019_title]
+    other = "業界エキスパート主導の研究開発センター設立"
+[timeline_2019_desc]
+    other = "業界ベテランの専門家を招聘し、プロフェッショナルなR&Dチームを組織し、製品革新と技術進歩に強力なサポートを提供しています"
+
+[timeline_2022_title]
+    other = "江蘇尚迈新材料科技有限公司設立"
+[timeline_2022_desc]
+    other = "江蘇省に子会社を設立し、製造規模を拡大し、華東地域の産業レイアウトを改善し、サービス能力を強化しました"
+
+[timeline_2024_title]
+    other = "年間売上で1000万人民元を突破"
+[timeline_2024_desc]
+    other = "製品品質の向上と市場拡大を通じて、年間売上高が初めて1000万人民元を突破し、業界での地位を確立しました"
+
+[timeline_future_desc]
+    other = "中国の自動車産業と高端製造機械業界の継続的な成長に伴い、当社では年間生産能力2000トンのグレード別ポリマー材料および50万セットの防振製品を製造できる全自動化生産ラインの構築を計画しており、年間売上高5000万人民元の達成を目指しています。"
+
+# Header navigation and accessibility
+[nav_home_fallback]
+    other = "ホーム"
+[nav_products_fallback]
+    other = "製品"
+[nav_about_fallback]
+    other = "会社概要"
+[nav_contact_fallback]
+    other = "お問い合わせ"
+[aria_goto_homepage]
+    other = "ホームページへ移動"
+[aria_main_navigation]
+    other = "メインナビゲーション"
+[aria_select_language]
+    other = "言語を選択"
+[aria_toggle_menu]
+    other = "ナビゲーションメニューを切り替え"
+
+# 404 Page translations
+[page_not_found]
+    other = "ページが見つかりません"
+[page_not_found_title]
+    other = "ページが見つかりません - 404"
+[page_not_found_sorry]
+    other = "申し訳ございませんが、お探しのページは存在しません。リンクが間違っているか、ページが移動された可能性があります。"
+[search_products_services]
+    other = "製品やサービスを検索..."
+[recommended_pages]
+    other = "おすすめページ"
+[return_home]
+    other = "ホームに戻る"
+[product_catalog]
+    other = "製品カタログ"
+[case_studies]
+    other = "事例紹介"
+[opportunities]
+    other = "採用情報"
+[contact_us]
+    other = "お問い合わせ"
+[news_updates]
+    other = "ニュース・更新情報"
+[contact_if_error]
+    other = "これがエラーであると思われる場合は、お気軽にお問い合わせください："
+
+# Core template translations
+[skip_to_main_content]
+    other = "メインコンテンツにスキップ"
+[open_graph_title]
+    other = "上海尚迈ポリマー材料有限公司"
+[open_graph_description]
+    other = "プロフェッショナルなポリマー材料メーカー、高品質なゴム製品の開発と製造に特化"
+[company_alt_name]
+    other = "上海尚迈ポリマー材料有限公司"
+[site_name_short]
+    other = "尚迈ポリマー材料"
+[product_polymer_molded]
+    other = "ポリマー成形製品"
+[product_polymer_molded_desc]
+    other = "精密ゴム成形製品"
+[product_special_sealing]
+    other = "特殊シール製品"
+[product_special_sealing_desc]
+    other = "高性能シールシステム"
+
+# List page translations
+[search_content]
+    other = "コンテンツを検索"
+[search_placeholder_generic]
+    other = "検索"
+[featured]
+    other = "注目"
+[no_results_found]
+    other = "検索結果が見つかりません"
+[adjust_search_terms]
+    other = "検索条件を調整するか、以下のすべてのコンテンツをご覧ください"
+[no_content_available]
+    other = "コンテンツがありません"
+[no_content_message]
+    other = "このセクションにはまだコンテンツがありません。更新をお待ちください！"
+[back_to_home]
+    other = "ホームに戻る"
+[previous]
+    other = "前のページ"
+[next]
+    other = "次のページ"
+[go_to_previous_page]
+    other = "前のページに移動"
+[go_to_next_page]
+    other = "次のページに移動"
+[page_info]
+    other = "{1} ページ中 {0} ページ"
+[items_info]
+    other = "（全 {1} 件中 {0} 件）"
+
+# Single page translations
+[breadcrumb_home]
+    other = "ホーム"
+[by_author]
+    other = "著者："
+[min_read]
+    other = "分で読める"
+[table_of_contents]
+    other = "目次"
+[share_this]
+    other = "このページを共有"
+[related_articles]
+    other = "関連記事"
+[technical_specifications]
+    other = "技術仕様"
+[back_to_section]
+    other = "{0}に戻る"
+[article_navigation]
+    other = "記事ナビゲーション"
+
+# About page translations
+[company_story]
+    other = "会社の沿革"
+[our_impact]
+    other = "当社の実績"
+[years_of_innovation]
+    other = "イノベーションの歴史"
+[satisfied_customers]
+    other = "満足いただいたお客様"
+[premium_products]
+    other = "プレミアム製品"
+[expert_support]
+    other = "専門サポート"
+[our_core_values]
+    other = "当社の基本理念"
+[excellence]
+    other = "卓越性"
+[excellence_desc]
+    other = "提供するあらゆる製品とサービスにおいて卓越性を追求し、最高水準の品質を維持いたします。"
+[innovation]
+    other = "革新"
+[innovation_desc]
+    other = "継続的な革新により限界を押し広げ、お客様のための最先端ソリューションを創造いたします。"
+[integrity]
+    other = "誠実性"
+[integrity_desc]
+    other = "すべての関係において、誠実性、透明性、倫理的な実践をもってビジネスを行います。"
+[customer_focus]
+    other = "顧客重視"
+[customer_focus_desc]
+    other = "お客様は当社のすべての活動の中心であり、卓越したサービスへのコミットメントを推進しています。"
+[ready_to_work]
+    other = "当社とのお取引をお考えですか？"
+[join_satisfied_customers]
+    other = "当社を信頼していただいている数千のお客様にお仲間入りください。"
+[view_products]
+    other = "製品を見る"
+
+# Products page translations
+[products_count]
+    other = "製品"
+[view_category]
+    other = "カテゴリを見る"
+[browse_products]
+    other = "製品を閲覧"
+
+# News page translations
+[news_center]
+    other = "ニュースセンター"
+[news_description]
+    other = "上海尚迈ポリマー材料の最新技術記事、業界ニュース、製品アップデート"
+[search_news]
+    other = "ニュースを検索"
+[search_news_placeholder]
+    other = "ニュースを検索..."
+[articles_count]
+    other = "記事"
+[view_articles]
+    other = "記事を見る"
+[articles_unit]
+    other = "記事"
+[read_article]
+    other = "記事を読む"
+[no_articles]
+    other = "記事がありません"
+[articles_coming_soon]
+    other = "記事コンテンツは近日更新予定です！"
+[adjust_search_news]
+    other = "検索条件を調整するか、すべての記事カテゴリを閲覧してください"
+[article_published_by]
+    other = "上海尚迈ポリマー材料有限公司により公開。転載時は出典を明記してください。"
+[contact_inquiry]
+    other = "お問い合わせ"
+[contact_for_info]
+    other = "製品情報や技術サポートについては、お気軽にお問い合わせください"
+[article_information]
+    other = "記事情報"
+[category]
+    other = "カテゴリ"
+[published]
+    other = "公開日"
+[read_time]
+    other = "読了時間"
+[read_time_minutes]
+    other = "約{0}分"
+[share_article]
+    other = "記事を共有"
+[back_to_news]
+    other = "ニュースに戻る"
+
+# Tech page translations
+[tech_cases]
+    other = "技術事例"
+[technology]
+    other = "技術"
+[adjust_search_cases]
+    other = "検索条件を調整するか、すべての事例を閲覧してください"
+[technical_consultation]
+    other = "技術相談"
+[need_solutions]
+    other = "類似の技術ソリューションが必要ですか？専門チームにお問い合わせください"
+[contact_expert]
+    other = "専門家に相談"
+[related_cases]
+    other = "関連事例"
+[back_to_cases]
+    other = "事例一覧に戻る"
+
+# Opportunities page translations
+[job_opportunities]
+    other = "採用情報"
+[adjust_search_jobs]
+    other = "検索条件を調整するか、すべての求人を閲覧してください"
+[quick_apply]
+    other = "簡単応募"
+[interested_position]
+    other = "このポジションにご興味がございますか？人事チームまでお気軽にお問い合わせください"
+[send_resume]
+    other = "履歴書を送信"
+[contact_hr]
+    other = "人事に連絡"
+[requirements]
+    other = "応募要件"
+[other_positions]
+    other = "その他のポジション"
+[back_to_jobs]
+    other = "求人一覧に戻る"

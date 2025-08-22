@@ -1,0 +1,374 @@
+{{ define "main" }}
+<article class="section">
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+            <ol style="display: flex; align-items: center; gap: var(--space-2); list-style: none; padding: 0; font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                <li>
+                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">{{ if eq .Site.Language.Lang "zh" }}首页{{ else }}Home{{ end }}</a>
+                </li>
+                <li style="display: flex; align-items: center; gap: var(--space-2);">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                    <a href="/zh/products/" style="color: var(--color-secondary);">{{ if eq .Site.Language.Lang "zh" }}产品目录{{ else }}Products{{ end }}</a>
+                </li>
+                <li style="display: flex; align-items: center; gap: var(--space-2);">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                    <span>{{ .Title }}</span>
+                </li>
+            </ol>
+        </nav>
+        
+        <!-- Product Header -->
+        <header style="margin-bottom: var(--space-12);">
+            <div style="max-width: 800px;">
+                <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6); line-height: var(--line-height-tight);">
+                    {{ .Title }}
+                </h1>
+                
+                {{ if .Params.description }}
+                <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-6); line-height: var(--line-height-relaxed);">
+                    {{ .Params.description }}
+                </p>
+                {{ end }}
+                
+                <!-- Product Meta -->
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-6); font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-8);">
+                    {{ if .Params.category }}
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>{{ if eq .Site.Language.Lang "zh" }}分类{{ else }}Category{{ end }}: 
+                        {{ $categorySlug := .Params.category }}
+                        {{ $productsPage := .Site.GetPage "/products" }}
+                        {{ range $productsPage.Params.categories }}
+                          {{ if eq .slug $categorySlug }}{{ .name }}{{ end }}
+                        {{ end }}
+                        </span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </header>
+        
+        <!-- Product Images Gallery -->
+        {{ $allImages := .Resources.ByType "image" }}
+        {{ $mainImage := .Resources.GetMatch "main.jpg" }}
+        {{ $otherImages := slice }}
+        {{ range $allImages }}
+          {{ if ne .Name "main.jpg" }}
+            {{ $otherImages = $otherImages | append . }}
+          {{ end }}
+        {{ end }}
+        
+        <div class="product-image-gallery" style="margin-bottom: var(--space-12);">
+            <!-- Main Hero Image -->
+            {{ if $mainImage }}
+            <div class="hero-image" style="border-radius: var(--radius-2xl); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: var(--space-6);">
+                <img src="{{ $mainImage.RelPermalink }}" 
+                     alt="{{ .Title }}" 
+                     style="width: 100%; height: 400px; object-fit: cover;"
+                     loading="eager">
+            </div>
+            {{ end }}
+            
+            <!-- Additional Images Grid -->
+            {{ if $otherImages }}
+            {{ $imageCount := len $otherImages }}
+            <div class="additional-images" 
+                 style="display: grid; 
+                        gap: var(--space-4);
+                        {{ if le $imageCount 2 }}grid-template-columns: repeat({{ $imageCount }}, 1fr);{{ else if le $imageCount 4 }}grid-template-columns: repeat(2, 1fr);{{ else }}grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); overflow-x: auto;{{ end }}">
+                {{ range $otherImages }}
+                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); cursor: pointer; transition: all var(--transition-fast);" 
+                     onclick="openImageModal('{{ .RelPermalink }}', '{{ $.Title }}')">
+                    <img src="{{ .RelPermalink }}" 
+                         alt="{{ $.Title }} - {{ .Name }}" 
+                         style="width: 100%; height: 200px; object-fit: cover; transition: transform var(--transition-normal);"
+                         loading="lazy">
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        
+        <!-- Image Modal -->
+        <div class="image-modal" id="image-modal" onclick="closeImageModal()">
+            <img id="modal-image" src="" alt="">
+        </div>
+        
+        <!-- Product Content -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-12); align-items: start;">
+            <!-- Main Content -->
+            <div class="content" style="max-width: none;">
+                {{ .Content }}
+                
+                <!-- Additional Product Info -->
+                <div style="margin-top: var(--space-8); padding: var(--space-6); background-color: var(--color-background-secondary); border-radius: var(--radius-lg);">
+                    <h3 style="margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}产品特点{{ else }}Product Features{{ end }}</h3>
+                    <ul style="margin: 0; padding-left: var(--space-6);">
+                        <li>{{ if eq .Site.Language.Lang "zh" }}高品质橡胶材料制造{{ else }}High-quality rubber material construction{{ end }}</li>
+                        <li>{{ if eq .Site.Language.Lang "zh" }}优异的耐用性和稳定性{{ else }}Excellent durability and stability{{ end }}</li>
+                        <li>{{ if eq .Site.Language.Lang "zh" }}严格的质量控制标准{{ else }}Strict quality control standards{{ end }}</li>
+                        <li>{{ if eq .Site.Language.Lang "zh" }}可根据客户需求定制{{ else }}Customizable according to customer requirements{{ end }}</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside style="position: sticky; top: calc(var(--header-height) + var(--space-6));">
+                <!-- Contact for Quote -->
+                <div class="card" style="margin-bottom: var(--space-6);">
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}获取报价{{ else }}Get Quote{{ end }}</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">
+                        {{ if eq .Site.Language.Lang "zh" }}联系我们获取此产品的详细信息和报价{{ else }}Contact us for detailed information and pricing for this product{{ end }}
+                    </p>
+                    <a href="/zh/contact/" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        {{ if eq .Site.Language.Lang "zh" }}联系我们{{ else }}Contact Us{{ end }}
+                    </a>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="card" style="margin-bottom: var(--space-6);">
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}产品信息{{ else }}Product Information{{ end }}</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--font-size-sm);">
+                        {{ if .Params.category }}
+                        <div style="display: flex; justify-content: space-between;">
+                            <strong>{{ if eq .Site.Language.Lang "zh" }}类别{{ else }}Category{{ end }}:</strong>
+                            <span>{{ .Params.category }}</span>
+                        </div>
+                        {{ end }}
+                        {{ if .Date }}
+                        <div style="display: flex; justify-content: space-between;">
+                            <strong>{{ if eq .Site.Language.Lang "zh" }}更新时间{{ else }}Updated{{ end }}:</strong>
+                            <span>{{ .Date.Format "2006-01-02" }}</span>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                
+                <!-- Related Products -->
+                {{ $related := where (where .Site.RegularPages "Section" "products") ".Params.category" .Params.category | first 3 }}
+                {{ if $related }}
+                <div class="card">
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}相关产品{{ else }}Related Products{{ end }}</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        {{ range $related }}
+                        {{ if ne .RelPermalink $.RelPermalink }}
+                        <article style="display: flex; gap: var(--space-3); align-items: start;">
+                            {{ if .Params.image }}
+                            <img src="{{ replace .Params.image "main.jpg" "thumb.jpg" }}" 
+                                 alt="{{ .Title }}" 
+                                 style="width: 60px; height: 60px; object-fit: cover; border-radius: var(--radius-lg); flex-shrink: 0;">
+                            {{ end }}
+                            <div>
+                                <h4 style="font-size: var(--font-size-sm); margin-bottom: var(--space-1); line-height: var(--line-height-tight);">
+                                    <a href="{{ .RelPermalink }}" style="color: var(--color-text-primary); text-decoration: none;">
+                                        {{ .Title }}
+                                    </a>
+                                </h4>
+                                <p style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin: 0;">
+                                    {{ .Params.category }}
+                                </p>
+                            </div>
+                        </article>
+                        {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </aside>
+        </div>
+        
+        <!-- Navigation -->
+        <nav style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--color-border);" aria-label="Product navigation">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+                {{ if .PrevInSection }}
+                <a href="{{ .PrevInSection.RelPermalink }}" 
+                   class="btn btn-outline"
+                   style="max-width: 250px;">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: var(--space-2);">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{ .PrevInSection.Title }}
+                    </span>
+                </a>
+                {{ else }}
+                <div></div>
+                {{ end }}
+                
+                <a href="/zh/products/" class="btn btn-primary">
+                    {{ if eq .Site.Language.Lang "zh" }}返回产品目录{{ else }}Back to Products{{ end }}
+                </a>
+                
+                {{ if .NextInSection }}
+                <a href="{{ .NextInSection.RelPermalink }}" 
+                   class="btn btn-outline"
+                   style="max-width: 250px;">
+                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{ .NextInSection.Title }}
+                    </span>
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-left: var(--space-2);">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                </a>
+                {{ else }}
+                <div></div>
+                {{ end }}
+            </div>
+        </nav>
+    </div>
+</article>
+
+<style>
+/* Enhanced Content Styling for Products */
+.content {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+}
+
+.content h2,
+.content h3,
+.content h4 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+}
+
+.content h2 {
+    font-size: var(--font-size-2xl);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.content p {
+    margin-bottom: var(--space-6);
+}
+
+.content ul,
+.content ol {
+    margin-bottom: var(--space-6);
+    padding-left: var(--space-6);
+}
+
+.content li {
+    margin-bottom: var(--space-2);
+}
+
+/* Product Image Gallery Styles */
+.product-image-gallery .additional-images > div:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-image-gallery .additional-images > div:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: var(--z-modal);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    article > div > div:last-of-type {
+        grid-template-columns: 1fr;
+    }
+    
+    aside {
+        position: static;
+        order: -1;
+    }
+    
+    .product-image-gallery .additional-images {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    article > div > div:first-of-type {
+        grid-template-columns: 1fr;
+    }
+    
+    nav[aria-label="Product navigation"] > div {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav[aria-label="Product navigation"] .btn {
+        max-width: none;
+        width: 100%;
+    }
+    
+    .product-image-gallery .hero-image img {
+        height: 300px;
+    }
+    
+    .product-image-gallery .additional-images {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .product-image-gallery .additional-images > div img {
+        height: 150px;
+    }
+}
+</style>
+
+<script>
+// Image Modal Functionality
+function openImageModal(imageSrc, imageAlt) {
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    
+    if (modal && modalImage) {
+        modalImage.src = imageSrc;
+        modalImage.alt = imageAlt;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('image-modal');
+    
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>
+{{ end }}

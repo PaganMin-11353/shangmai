@@ -1,0 +1,245 @@
+{{ define "main" }}
+<article class="section">
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+            <ol style="display: flex; align-items: center; gap: var(--space-2); list-style: none; padding: 0; font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                <li>
+                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">{{ i18n "breadcrumb_home" }}</a>
+                </li>
+                <li style="display: flex; align-items: center; gap: var(--space-2);">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                    <a href="{{ "/opportunities/" | relLangURL }}" style="color: var(--color-secondary);">{{ i18n "job_opportunities" }}</a>
+                </li>
+                <li style="display: flex; align-items: center; gap: var(--space-2);">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                    <span>{{ .Title }}</span>
+                </li>
+            </ol>
+        </nav>
+        
+        <!-- Job Header -->
+        <header class="job-header" style="margin-bottom: var(--space-12); text-align: center;">
+            <div style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); padding: var(--space-8); border-radius: var(--radius-2xl); color: white; margin-bottom: var(--space-8);">
+                <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); line-height: var(--line-height-tight);">
+                    {{ .Title }}
+                </h1>
+                
+                {{ if .Params.department }}
+                <p style="font-size: var(--font-size-xl); opacity: 0.9; margin-bottom: var(--space-6);">
+                    {{ .Params.department }}
+                </p>
+                {{ end }}
+                
+                <!-- Job Meta Information -->
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-6); font-size: var(--font-size-sm); opacity: 0.9;">
+                    {{ if .Params.location }}
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>{{ .Params.location }}</span>
+                    </div>
+                    {{ end }}
+                    
+                    {{ if .Params.type }}
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6h-2V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM8 4h8v2H8V4zm12 15H4V8h16v11z"/>
+                        </svg>
+                        <span>{{ .Params.type }}</span>
+                    </div>
+                    {{ end }}
+                    
+                    {{ if .Params.experience }}
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>{{ .Params.experience }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </header>
+        
+        <!-- Job Content Layout -->
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: var(--space-12); align-items: start; max-width: 1200px; margin: 0 auto;">
+            <!-- Main Content -->
+            <div class="job-content">
+                <div class="content" style="font-size: var(--font-size-lg); line-height: var(--line-height-relaxed);">
+                    {{ .Content }}
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="job-sidebar" style="position: sticky; top: calc(var(--header-height) + var(--space-6));">
+                <!-- Quick Apply -->
+                <div class="card" style="background: white; padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin-bottom: var(--space-6); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary);">
+                        {{ i18n "quick_apply" }}
+                    </h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); font-size: var(--font-size-sm);">
+                        {{ i18n "interested_position" }}
+                    </p>
+                    <a href="mailto:hr@smpolymer.com?subject={{ .Title | urlquery }}" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: var(--space-3);">
+                        {{ i18n "send_resume" }}
+                    </a>
+                    <a href="{{ "/contact/" | relLangURL }}" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                        {{ i18n "contact_hr" }}
+                    </a>
+                </div>
+                
+                <!-- Job Requirements -->
+                {{ if .Params.requirements }}
+                <div class="card" style="background: white; padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin-bottom: var(--space-6); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary);">
+                        {{ i18n "requirements" }}
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        {{ range .Params.requirements }}
+                        <li style="padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                            <svg width="16" height="16" fill="var(--color-success)" viewBox="0 0 24 24" style="margin-right: var(--space-2); vertical-align: middle;">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            {{ . }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+                
+                <!-- Other Jobs -->
+                {{ $otherJobs := where .Site.RegularPages "Section" "opportunities" | first 3 }}
+                {{ if $otherJobs }}
+                <div class="card" style="background: white; padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4); color: var(--color-text-primary);">
+                        {{ i18n "other_positions" }}
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        {{ range $otherJobs }}
+                        {{ if ne .RelPermalink $.RelPermalink }}
+                        <article style="padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-base); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--color-secondary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                            <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); line-height: var(--line-height-tight);">
+                                <a href="{{ .RelPermalink }}" style="color: var(--color-text-primary); text-decoration: none;">
+                                    {{ .Title }}
+                                </a>
+                            </h4>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin: 0;">
+                                {{ .Summary | truncate 60 }}
+                            </p>
+                        </article>
+                        {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </aside>
+        </div>
+        
+        <!-- Navigation -->
+        <nav style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--color-border); max-width: 1200px; margin-left: auto; margin-right: auto;" aria-label="Job navigation">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+                {{ if .PrevInSection }}
+                <a href="{{ .PrevInSection.RelPermalink }}" class="btn btn-outline" style="max-width: 250px;">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: var(--space-2);">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{ .PrevInSection.Title }}
+                    </span>
+                </a>
+                {{ else }}
+                <div></div>
+                {{ end }}
+                
+                <a href="{{ "/opportunities/" | relLangURL }}" class="btn btn-primary">
+                    {{ i18n "back_to_jobs" }}
+                </a>
+                
+                {{ if .NextInSection }}
+                <a href="{{ .NextInSection.RelPermalink }}" class="btn btn-outline" style="max-width: 250px;">
+                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{ .NextInSection.Title }}
+                    </span>
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-left: var(--space-2);">
+                        <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
+                    </svg>
+                </a>
+                {{ else }}
+                <div></div>
+                {{ end }}
+            </div>
+        </nav>
+    </div>
+</article>
+
+<style>
+/* Enhanced Job Styling */
+.job-header {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+}
+
+.job-content .content h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin: var(--space-12) 0 var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.job-content .content h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin: var(--space-8) 0 var(--space-4);
+    color: var(--color-text-primary);
+}
+
+.job-content .content p {
+    margin-bottom: var(--space-6);
+    color: var(--color-text-secondary);
+}
+
+.job-content .content ul {
+    margin-bottom: var(--space-6);
+    padding-left: var(--space-6);
+}
+
+.job-content .content li {
+    margin-bottom: var(--space-2);
+    color: var(--color-text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    article > div > div {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .job-sidebar {
+        position: static;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .job-header h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .job-header {
+        padding: var(--space-6);
+    }
+    
+    .job-content .content {
+        font-size: var(--font-size-base);
+    }
+}
+</style>
+{{ end }}

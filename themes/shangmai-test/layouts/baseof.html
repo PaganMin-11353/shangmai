@@ -15,28 +15,35 @@
     <link rel="canonical" href="{{ .Permalink }}">
     
     <!-- CSS -->
-    {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+    {{ $css := resources.Get "css/main.css" }}
+    {{ if $css }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ else }}
+    <!-- Fallback CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    {{ end }}
     
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/images/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicons/site.webmanifest">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ i18n "open_graph_title" | default .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ i18n "open_graph_description" | default .Site.Params.description }}{{ end }}">
     <meta property="og:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ .Site.Params.default_image | absURL }}{{ end }}">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:locale" content="{{ .Site.Language.Lang | default "en_US" }}">
+    <meta property="og:site_name" content="{{ i18n "site_name_short" | default .Site.Title }}">
+    <meta property="og:locale" content="{{ if eq .Site.Language.Lang "zh" }}zh_CN{{ else if eq .Site.Language.Lang "ja" }}ja_JP{{ else }}en_US{{ end }}">
+    {{ if eq .Site.Language.Lang "zh" }}<meta property="og:locale:alternate" content="en_US">{{ end }}
+    {{ if eq .Site.Language.Lang "zh" }}<meta property="og:locale:alternate" content="ja_JP">{{ end }}
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -63,9 +70,13 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "{{ .Site.Title }}",
+        "alternateName": "{{ i18n "company_alt_name" }}",
         "url": "{{ .Site.BaseURL }}",
         "description": "{{ .Site.Params.description }}",
         "logo": "{{ .Site.Params.logo | absURL }}",
+        "foundingDate": "2010",
+        "industry": "Polymer Manufacturing",
+        "knowsLanguage": ["zh-CN", "en-US", "ja-JP"],
         {{ with .Site.Params.social }}
         "sameAs": [
             {{ with .facebook }}"{{ . }}",{{ end }}
@@ -74,18 +85,60 @@
             {{ with .instagram }}"{{ . }}"{{ end }}
         ],
         {{ end }}
-        {{ with .Site.Params.address }}
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "{{ . }}"
+            "addressCountry": "CN",
+            "addressLocality": "Shanghai",
+            "addressRegion": "Shanghai"
         },
-        {{ end }}
-        {{ with .Site.Params.phone }}
-        "telephone": "{{ . }}",
-        {{ end }}
-        {{ with .Site.Params.email }}
-        "email": "{{ . }}"
-        {{ end }}
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+86-21-1234-5678",
+            "contactType": "customer service",
+            "availableLanguage": ["Chinese", "English", "Japanese"]
+        },
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Product",
+                    "name": "{{ i18n "product_polymer_molded" }}",
+                    "description": "{{ i18n "product_polymer_molded_desc" }}"
+                }
+            },
+            {
+                "@type": "Offer", 
+                "itemOffered": {
+                    "@type": "Product",
+                    "name": "{{ i18n "product_special_sealing" }}",
+                    "description": "{{ i18n "product_special_sealing_desc" }}"
+                }
+            }
+        ]
+    }
+    </script>
+    {{ else if eq .Section "products" }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "{{ .Title }}",
+        "description": "{{ .Description }}",
+        "numberOfItems": {{ len .Pages }},
+        "itemListElement": [
+            {{ range $index, $page := .Pages }}
+            {
+                "@type": "ListItem",
+                "position": {{ add $index 1 }},
+                "item": {
+                    "@type": "Product",
+                    "name": "{{ $page.Title }}",
+                    "description": "{{ $page.Summary | truncate 100 }}",
+                    "url": "{{ $page.Permalink }}"
+                }
+            }{{ if ne $index (sub (len $.Pages) 1) }},{{ end }}
+            {{ end }}
+        ]
     }
     </script>
     {{ end }}
@@ -93,7 +146,7 @@
 <body class="antialiased">
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50">
-        Skip to main content
+        {{ i18n "skip_to_main_content" }}
     </a>
 
     {{ partial "header.html" . }}
@@ -105,8 +158,12 @@
     {{ partial "footer.html" . }}
     
     <!-- JavaScript -->
-    {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+    {{ $js := resources.Get "js/main.js" }}
+    {{ if $js }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ else }}
+    <script src="/js/main.js" defer></script>
+    {{ end }}
     
     <!-- Analytics (if configured) -->
     {{ with .Site.Params.google_analytics }}

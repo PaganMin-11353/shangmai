@@ -17,7 +17,8 @@
                 <div style="position: relative;">
                     <input type="text" 
                            id="search-input"
-                           placeholder="Search {{ .Section | default "content" }}..."
+                           placeholder="{{ i18n "search_placeholder_generic" }} {{ .Section | default "content" }}..."
+                           aria-label="{{ i18n "search_content" }}"
                            style="width: 100%; padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12); border: 2px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--font-size-base); transition: border-color var(--transition-fast);"
                            onfocus="this.style.borderColor='var(--color-secondary)'"
                            onblur="this.style.borderColor='var(--color-border)'">
@@ -43,7 +44,10 @@
                         <img src="{{ .Params.image }}" 
                              alt="{{ .Title }}" 
                              class="product-image"
-                             loading="lazy">
+                             loading="lazy"
+                             decoding="async"
+                             width="320" 
+                             height="240">
                         {{ else }}
                         <div class="product-image product-image-placeholder">
                             <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24">
@@ -53,7 +57,7 @@
                         {{ end }}
                         
                         {{ if .Params.featured }}
-                        <div class="product-badge">Featured</div>
+                        <div class="product-badge">{{ i18n "featured" }}</div>
                         {{ end }}
                     </div>
                     
@@ -78,7 +82,9 @@
                         {{ end }}
                         
                         <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2);">
-                            <a href="{{ .RelPermalink }}" class="btn btn-outline" style="flex: 1;">Learn More</a>
+                            <a href="{{ .RelPermalink }}" class="btn btn-outline" style="flex: 1;">
+                                {{ i18n "learn_more" }}
+                            </a>
                             {{ if .Params.demo_url }}
                             <a href="{{ .Params.demo_url }}" class="btn btn-ghost" target="_blank" rel="noopener">
                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -104,7 +110,10 @@
                              style="width: 100%; height: 200px; object-fit: cover; transition: transform var(--transition-normal);"
                              onmouseover="this.style.transform='scale(1.05)'"
                              onmouseout="this.style.transform='scale(1)'"
-                             loading="lazy">
+                             loading="lazy"
+                             decoding="async"
+                             width="400"
+                             height="200">
                     </div>
                     {{ end }}
                     
@@ -157,7 +166,9 @@
                     </div>
                     {{ end }}
                     
-                    <a href="{{ .RelPermalink }}" class="btn btn-outline">Read More</a>
+                    <a href="{{ .RelPermalink }}" class="btn btn-outline">
+                        {{ i18n "learn_more" }}
+                    </a>
                 </article>
                 {{ end }}
             </div>
@@ -169,13 +180,23 @@
                     <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
                         <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                     </svg>
-                    <h3 style="margin-bottom: var(--space-2);">No Results Found</h3>
+                    <h3 style="margin-bottom: var(--space-2);">
+                        {{ i18n "no_results_found" }}
+                    </h3>
                     <p style="color: var(--color-text-secondary);">
-                        Try adjusting your search terms or browse all content below.
+                        {{ i18n "adjust_search_terms" }}
                     </p>
                 </div>
             </div>
             
+        {{ else }}
+        <!-- Section Content (when no individual pages exist) -->
+        {{ if .Content }}
+        <div class="section-content" style="max-width: 800px; margin: 0 auto;">
+            <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); line-height: 1.7;">
+                {{ .Content }}
+            </div>
+        </div>
         {{ else }}
         <!-- Empty State -->
         <div class="text-center" style="padding: var(--space-16) 0;">
@@ -183,13 +204,14 @@
                 <svg width="64" height="64" fill="var(--color-text-muted)" viewBox="0 0 24 24" style="margin-bottom: var(--space-4);">
                     <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 </svg>
-                <h2 style="margin-bottom: var(--space-2);">No Content Available</h2>
+                <h2 style="margin-bottom: var(--space-2);">{{ i18n "no_content_available" }}</h2>
                 <p style="color: var(--color-text-secondary); margin-bottom: var(--space-6);">
-                    There's no content in this section yet. Check back soon for updates!
+                    {{ i18n "no_content_message" }}
                 </p>
-                <a href="{{ .Site.BaseURL }}" class="btn btn-primary">Back to Home</a>
+                <a href="{{ .Site.BaseURL }}" class="btn btn-primary">{{ i18n "back_to_home" }}</a>
             </div>
         </div>
+        {{ end }}
         {{ end }}
         
         <!-- Pagination -->
@@ -200,11 +222,11 @@
                 {{ if .Paginator.HasPrev }}
                 <a href="{{ .Paginator.Prev.URL }}" 
                    class="btn btn-outline"
-                   aria-label="Go to previous page">
+                   aria-label="{{ i18n "go_to_previous_page" }}">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: var(--space-2);">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                     </svg>
-                    Previous
+                    {{ i18n "previous" }}
                 </a>
                 {{ end }}
                 
@@ -229,8 +251,8 @@
                 {{ if .Paginator.HasNext }}
                 <a href="{{ .Paginator.Next.URL }}" 
                    class="btn btn-outline"
-                   aria-label="Go to next page">
-                    Next
+                   aria-label="{{ i18n "go_to_next_page" }}">
+                    {{ i18n "next" }}
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-left: var(--space-2);">
                         <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
                     </svg>
@@ -239,15 +261,15 @@
             </div>
             
             <div class="text-center" style="margin-top: var(--space-4); font-size: var(--font-size-sm); color: var(--color-text-muted);">
-                Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }} 
-                ({{ len .Pages }} of {{ .Paginator.TotalNumberOfElements }} total)
+                {{ $pageInfo := printf (i18n "page_info") .Paginator.PageNumber .Paginator.TotalPages }}
+                {{ $itemsInfo := printf (i18n "items_info") (len .Pages) .Paginator.TotalNumberOfElements }}
+                {{ $pageInfo }} {{ $itemsInfo }}
             </div>
         </nav>
         {{ end }}
         {{ end }}
     </div>
 </div>
-{{ end }}
 
 <script>
 // Enhanced Search and Filter Functionality
@@ -394,3 +416,4 @@ nav[aria-label="Pagination"] a:hover {
     }
 }
 </style>
+{{ end }}

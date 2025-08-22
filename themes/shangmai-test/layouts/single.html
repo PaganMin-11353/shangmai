@@ -5,7 +5,7 @@
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
             <ol style="display: flex; align-items: center; gap: var(--space-2); list-style: none; padding: 0; font-size: var(--font-size-sm); color: var(--color-text-muted);">
                 <li>
-                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">Home</a>
+                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">{{ i18n "breadcrumb_home" }}</a>
                 </li>
                 {{ if .Section }}
                 <li style="display: flex; align-items: center; gap: var(--space-2);">
@@ -55,7 +55,7 @@
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
-                        <span>By {{ .Params.author }}</span>
+                        <span>{{ i18n "by_author" }} {{ .Params.author }}</span>
                     </div>
                     {{ end }}
                     
@@ -64,7 +64,7 @@
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
-                        <span>{{ .Params.reading_time }} min read</span>
+                        <span>{{ .Params.reading_time }} {{ i18n "min_read" }}</span>
                     </div>
                     {{ end }}
                 </div>
@@ -110,7 +110,7 @@
                 <!-- Table of Contents -->
                 {{ if .TableOfContents }}
                 <div class="card" style="margin-bottom: var(--space-6);">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Table of Contents</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "table_of_contents" }}</h3>
                     <div style="font-size: var(--font-size-sm);">
                         {{ .TableOfContents }}
                     </div>
@@ -119,7 +119,7 @@
                 
                 <!-- Share Buttons -->
                 <div class="card" style="margin-bottom: var(--space-6);">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Share This</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "share_this" }}</h3>
                     <div style="display: flex; gap: var(--space-3);">
                         <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" 
                            target="_blank" 
@@ -142,7 +142,7 @@
                 {{ $related := .Site.RegularPages.Related . | first 3 }}
                 {{ if $related }}
                 <div class="card">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Related Articles</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "related_articles" }}</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-4);">
                         {{ range $related }}
                         <article style="display: flex; gap: var(--space-3); align-items: start;">
@@ -172,7 +172,7 @@
         <!-- Product Specifications (for product pages) -->
         {{ if and (eq .Section "products") .Params.specifications }}
         <section style="margin-top: var(--space-16); padding: var(--space-8); background-color: var(--color-background-secondary); border-radius: var(--radius-2xl);">
-            <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-6);">Technical Specifications</h2>
+            <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-6);">{{ i18n "technical_specifications" }}</h2>
             <div class="grid grid-cols-2" style="gap: var(--space-4);">
                 {{ range .Params.specifications }}
                 <div style="display: flex; justify-content: space-between; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border);">
@@ -185,7 +185,7 @@
         {{ end }}
         
         <!-- Navigation -->
-        <nav style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--color-border);" aria-label="Article navigation">
+        <nav style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--color-border);" aria-label="{{ i18n "article_navigation" }}">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
                 {{ if .PrevInSection }}
                 <a href="{{ .PrevInSection.RelPermalink }}" 
@@ -203,7 +203,7 @@
                 {{ end }}
                 
                 <a href="/{{ .Section }}/" class="btn btn-primary">
-                    Back to {{ .Section | title }}
+                    {{ printf (i18n "back_to_section") (.Section | title) }}
                 </a>
                 
                 {{ if .NextInSection }}

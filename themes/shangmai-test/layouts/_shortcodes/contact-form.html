@@ -1,0 +1,411 @@
+<!-- Contact Form Shortcode -->
+<form class="contact-form" 
+      id="contact-form"
+      action="{{ .Get "action" | default "#" }}" 
+      method="POST" 
+      novalidate>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="contact-name" class="form-label">
+                Name <span class="required">*</span>
+            </label>
+            <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                class="form-input" 
+                required 
+                aria-describedby="name-error"
+                autocomplete="name">
+            <div class="form-error" id="name-error" role="alert"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-email" class="form-label">
+                Email <span class="required">*</span>
+            </label>
+            <input 
+                type="email" 
+                id="contact-email" 
+                name="email" 
+                class="form-input" 
+                required 
+                aria-describedby="email-error"
+                autocomplete="email">
+            <div class="form-error" id="email-error" role="alert"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-phone" class="form-label">
+                Phone
+            </label>
+            <input 
+                type="tel" 
+                id="contact-phone" 
+                name="phone" 
+                class="form-input"
+                autocomplete="tel">
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-company" class="form-label">
+                Company
+            </label>
+            <input 
+                type="text" 
+                id="contact-company" 
+                name="company" 
+                class="form-input"
+                autocomplete="organization">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="contact-subject" class="form-label">
+            Subject <span class="required">*</span>
+        </label>
+        <select id="contact-subject" name="subject" class="form-select" required aria-describedby="subject-error">
+            <option value="">Please select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="sales">Sales Question</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+        </select>
+        <div class="form-error" id="subject-error" role="alert"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="contact-message" class="form-label">
+            Message <span class="required">*</span>
+        </label>
+        <textarea 
+            id="contact-message" 
+            name="message" 
+            class="form-textarea" 
+            rows="5" 
+            required 
+            aria-describedby="message-error"
+            placeholder="Please describe your inquiry in detail..."></textarea>
+        <div class="form-error" id="message-error" role="alert"></div>
+    </div>
+    
+    <div class="form-group">
+        <label class="checkbox-label">
+            <input type="checkbox" id="contact-consent" name="consent" required>
+            <span class="checkmark"></span>
+            I agree to the <a href="/privacy/" target="_blank">Privacy Policy</a> and consent to being contacted <span class="required">*</span>
+        </label>
+        <div class="form-error" id="consent-error" role="alert"></div>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-spinner" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="31.416" stroke-dashoffset="31.416" opacity="0.3"/>
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="31.416" stroke-dashoffset="15.708"/>
+                </svg>
+            </span>
+        </button>
+        <button type="reset" class="btn btn-outline">Clear Form</button>
+    </div>
+    
+    <!-- Success/Error Messages -->
+    <div class="form-message" id="form-success" style="display: none;" role="alert">
+        <div class="success-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="var(--color-success)"/>
+                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2"/>
+            </svg>
+            <span>Message sent successfully! We'll get back to you soon.</span>
+        </div>
+    </div>
+    
+    <div class="form-message" id="form-error" style="display: none;" role="alert">
+        <div class="error-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="var(--color-error)"/>
+                <path d="M15 9l-6 6M9 9l6 6" stroke="white" stroke-width="2"/>
+            </svg>
+            <span>Failed to send message. Please try again or contact us directly.</span>
+        </div>
+    </div>
+</form>
+
+<style>
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-6);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.form-group {
+    margin-bottom: var(--space-4);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.required {
+    color: var(--color-error);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(var(--color-secondary-rgb), 0.1);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--color-error);
+}
+
+.form-error {
+    margin-top: var(--space-1);
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+    min-height: 1.25rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.form-message {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+}
+
+.success-message,
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.success-message {
+    color: var(--color-success);
+}
+
+.error-message {
+    color: var(--color-error);
+}
+
+/* Button spinner animation */
+.btn-spinner svg {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+
+<script>
+// Contact form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    
+    const submitBtn = form.querySelector('#submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+    
+    // Form validation
+    function validateField(field, errorElement, validator) {
+        const value = field.value.trim();
+        const isValid = validator(value);
+        
+        field.classList.toggle('error', !isValid);
+        errorElement.textContent = isValid ? '' : getErrorMessage(field.name, value);
+        
+        return isValid;
+    }
+    
+    function getErrorMessage(fieldName, value) {
+        switch (fieldName) {
+            case 'name':
+                return value === '' ? 'Name is required' : 'Please enter a valid name';
+            case 'email':
+                return value === '' ? 'Email is required' : 'Please enter a valid email address';
+            case 'subject':
+                return 'Please select a subject';
+            case 'message':
+                return value === '' ? 'Message is required' : 'Message must be at least 10 characters long';
+            case 'consent':
+                return 'You must agree to the privacy policy';
+            default:
+                return 'This field is invalid';
+        }
+    }
+    
+    // Validators
+    const validators = {
+        name: (value) => value.length >= 2,
+        email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+        subject: (value) => value !== '',
+        message: (value) => value.length >= 10,
+        consent: (checked) => checked
+    };
+    
+    // Real-time validation
+    ['name', 'email', 'subject', 'message'].forEach(fieldName => {
+        const field = form.querySelector(`[name="${fieldName}"]`);
+        const errorElement = form.querySelector(`#${fieldName}-error`);
+        
+        if (field && errorElement) {
+            field.addEventListener('blur', () => {
+                validateField(field, errorElement, validators[fieldName]);
+            });
+            
+            field.addEventListener('input', () => {
+                if (field.classList.contains('error')) {
+                    validateField(field, errorElement, validators[fieldName]);
+                }
+            });
+        }
+    });
+    
+    // Consent checkbox validation
+    const consentField = form.querySelector('[name="consent"]');
+    const consentError = form.querySelector('#consent-error');
+    if (consentField && consentError) {
+        consentField.addEventListener('change', () => {
+            validateField(consentField, consentError, (checked) => validators.consent(consentField.checked));
+        });
+    }
+    
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate all fields
+        const fields = ['name', 'email', 'subject', 'message'];
+        let isValid = true;
+        
+        fields.forEach(fieldName => {
+            const field = form.querySelector(`[name="${fieldName}"]`);
+            const errorElement = form.querySelector(`#${fieldName}-error`);
+            if (field && errorElement) {
+                const fieldValid = validateField(field, errorElement, validators[fieldName]);
+                isValid = isValid && fieldValid;
+            }
+        });
+        
+        // Validate consent
+        if (consentField && consentError) {
+            const consentValid = validateField(consentField, consentError, () => consentField.checked);
+            isValid = isValid && consentValid;
+        }
+        
+        if (!isValid) {
+            // Focus first error field
+            const firstError = form.querySelector('.error');
+            if (firstError) {
+                firstError.focus();
+            }
+            return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnSpinner.style.display = 'inline-block';
+        
+        try {
+            // Simulate form submission (replace with actual endpoint)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Show success message
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('form-error').style.display = 'none';
+            form.reset();
+            
+            // Announce success to screen readers
+            if (window.ThemeUtils) {
+                window.ThemeUtils.announceToScreenReader('Message sent successfully');
+            }
+            
+        } catch (error) {
+            // Show error message
+            document.getElementById('form-error').style.display = 'block';
+            document.getElementById('form-success').style.display = 'none';
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            btnSpinner.style.display = 'none';
+        }
+    });
+});
+</script>

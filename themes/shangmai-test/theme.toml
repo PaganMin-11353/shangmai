@@ -1,12 +1,12 @@
 name = "shangmai-test"
 license = "MIT"
 licenselink = "https://github.com/shangmai/shangmai-test/blob/main/LICENSE"
-description = "A modern, sophisticated Hugo theme for product showcasing inspired by industry leaders like Apple and Tesla"
+description = "A Hugo theme for Shangmai Polymer"
 homepage = "https://github.com/shangmai/shangmai-test"
 tags = ["modern", "business", "product-showcase", "responsive", "clean", "professional", "corporate"]
 features = ["responsive", "product-catalog", "multilingual", "search", "animations", "mega-menu", "hero-sections"]
 min_version = "0.146.0"
 
 [author]
-  name = "Shangmai Design Team"
+  name = "Alan.Z"
   homepage = "https://shangmai.com"

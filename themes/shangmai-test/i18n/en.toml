@@ -1,0 +1,352 @@
+[nav_home] 
+    other = "Home"
+[nav_tech] 
+    other = "Projects"
+[nav_products] 
+    other = "Products"
+[nav_certs] 
+    other = "Certificates"
+[nav_news] 
+    other = "News"
+[nav_contact] 
+    other = "Contact"
+[learn_more] 
+    other = "Learn more"
+[search_placeholder] 
+    other = "Search products…"
+[lang_zh] 
+    other = "中文"
+[lang_en] 
+    other = "English"
+[lang_ja] 
+    other = "日本語"
+[lang_my] 
+    other = "Bahasa Melayu"
+
+# Footer translations
+[quick_links]
+    other = "Quick Links"
+[contact_information]
+    other = "Contact Information"
+[mobile]
+    other = "Mobile"
+[fax]
+    other = "Fax"
+[email]
+    other = "Email"
+[business_hours]
+    other = "Business Hours"
+[company_description]
+    other = "Professional polymer material manufacturer, focusing on high-quality rubber product development and production"
+[address_label]
+    other = "Address"
+[postal_code_label]
+    other = "Postal Code"
+[privacy_policy]
+    other = "Privacy Policy"
+[terms_of_service]
+    other = "Terms of Service"
+[cookie_policy]
+    other = "Cookie Policy"
+[sitemap]
+    other = "Sitemap"
+[all_rights_reserved]
+    other = "All rights reserved"
+[company_name]
+    other = "Shanghai Shangmai Polymer Materials Co., Ltd."
+[address_content]
+    other = "No. 370 Xinni Road, Nicheng Town, Pudong New Area, Shanghai, China"
+
+# Home page translations
+[hero_title]
+    other = "Shangmai Polymer Innovation"
+[hero_subtitle]
+    other = "Leading manufacturer of high-performance polymer materials and industrial solutions, specializing in sealing components and vibration damping products"
+[explore_products]
+    other = "Explore Products"
+[contact_us_cta]
+    other = "Contact Us"
+
+# Timeline section
+[timeline_title]
+    other = "HISTORICAL EVOLUTION"
+[timeline_subtitle]
+    other = "Company History"
+[future_goals]
+    other = "Future Goals"
+
+# Timeline events
+[timeline_2008_title]
+    other = "Shanghai Shangmai Polymer Materials Co., Ltd. Established"
+[timeline_2008_desc]
+    other = "Founded in Shanghai, initially focused on R&D and manufacturing of basic rubber products, establishing a foundation in the polymer industry"
+
+[timeline_2012_title]
+    other = "Production Process Standardization Achieved"
+[timeline_2012_desc]
+    other = "Established comprehensive quality management systems, improved product quality through process standardization, and built professional testing centers"
+
+[timeline_2017_title]
+    other = "Ultra-High Pressure Sealing Components R&D Success"
+[timeline_2017_desc]
+    other = "Developed ultra-high pressure sealing components for advanced applications, successfully launched transformer oil bladders and other high-tech products"
+
+[timeline_2019_title]
+    other = "Industry Expert-Led R&D Center Established"
+[timeline_2019_desc]
+    other = "Hired senior industry experts to build professional R&D teams, providing strong support for product innovation and technical upgrades"
+
+[timeline_2022_title]
+    other = "Jiangsu Shangmai New Materials Technology Co., Ltd. Established"
+[timeline_2022_desc]
+    other = "Established subsidiary in Jiangsu, expanding production capacity, improving regional industrial layout, and enhancing service capabilities"
+
+[timeline_2024_title]
+    other = "Annual Sales Exceeded 10 Million RMB"
+[timeline_2024_desc]
+    other = "Through product quality improvements and market expansion, annual sales exceeded 10 million RMB for the first time, establishing industry position"
+
+[timeline_future_desc]
+    other = "With the continued growth of China's automotive and high-end equipment manufacturing industries, we plan to establish a fully automated production line capable of producing 2,000 tons of graded polymer materials and 500,000 vibration damping products annually, achieving an annual revenue of 50 million RMB."
+
+# Header navigation and accessibility
+[nav_home_fallback]
+    other = "Home"
+[nav_products_fallback]
+    other = "Products"
+[nav_about_fallback]
+    other = "About"
+[nav_contact_fallback]
+    other = "Contact"
+[aria_goto_homepage]
+    other = "Go to homepage"
+[aria_main_navigation]
+    other = "Main navigation"
+[aria_select_language]
+    other = "Select language"
+[aria_toggle_menu]
+    other = "Toggle navigation menu"
+
+# 404 Page translations
+[page_not_found]
+    other = "Page Not Found"
+[page_not_found_title]
+    other = "Page Not Found - 404"
+[page_not_found_sorry]
+    other = "Sorry, the page you are looking for does not exist. It may have been moved or the link is incorrect."
+[search_products_services]
+    other = "Search products or services..."
+[recommended_pages]
+    other = "Recommended Pages"
+[return_home]
+    other = "Return Home"
+[product_catalog]
+    other = "Product Catalog"
+[case_studies]
+    other = "Case Studies"
+[opportunities]
+    other = "Opportunities"
+[contact_us]
+    other = "Contact Us"
+[news_updates]
+    other = "News & Updates"
+[contact_if_error]
+    other = "If you believe this is an error, please contact us:"
+
+# Core template translations
+[skip_to_main_content]
+    other = "Skip to main content"
+[open_graph_title]
+    other = "Shangmai Polymer Materials Co., Ltd."
+[open_graph_description]
+    other = "Professional polymer material manufacturer, focusing on high-quality rubber product development and production"
+[company_alt_name]
+    other = "Shangmai Polymer Materials Co., Ltd."
+[site_name_short]
+    other = "Shangmai Polymer"
+[product_polymer_molded]
+    other = "Polymer Molded Products"
+[product_polymer_molded_desc]
+    other = "Precision rubber molded products"
+[product_special_sealing]
+    other = "Special Sealing Products"
+[product_special_sealing_desc]
+    other = "High-performance sealing systems"
+
+# List page translations
+[search_content]
+    other = "Search content"
+[search_placeholder_generic]
+    other = "Search"
+[featured]
+    other = "Featured"
+[no_results_found]
+    other = "No Results Found"
+[adjust_search_terms]
+    other = "Try adjusting your search terms or browse all content below"
+[no_content_available]
+    other = "No Content Available"
+[no_content_message]
+    other = "There's no content in this section yet. Check back soon for updates!"
+[back_to_home]
+    other = "Back to Home"
+[previous]
+    other = "Previous"
+[next]
+    other = "Next"
+[go_to_previous_page]
+    other = "Go to previous page"
+[go_to_next_page]
+    other = "Go to next page"
+[page_info]
+    other = "Page {0} of {1}"
+[items_info]
+    other = "({0} of {1} total)"
+
+# Single page translations
+[breadcrumb_home]
+    other = "Home"
+[by_author]
+    other = "By"
+[min_read]
+    other = "min read"
+[table_of_contents]
+    other = "Table of Contents"
+[share_this]
+    other = "Share This"
+[related_articles]
+    other = "Related Articles"
+[technical_specifications]
+    other = "Technical Specifications"
+[back_to_section]
+    other = "Back to {0}"
+[article_navigation]
+    other = "Article navigation"
+
+# About page translations
+[company_story]
+    other = "Company Story"
+[our_impact]
+    other = "Our Impact"
+[years_of_innovation]
+    other = "Years of Innovation"
+[satisfied_customers]
+    other = "Satisfied Customers"
+[premium_products]
+    other = "Premium Products"
+[expert_support]
+    other = "Expert Support"
+[our_core_values]
+    other = "Our Core Values"
+[excellence]
+    other = "Excellence"
+[excellence_desc]
+    other = "We strive for excellence in every product and service we deliver, maintaining the highest standards of quality."
+[innovation]
+    other = "Innovation"
+[innovation_desc]
+    other = "Continuous innovation drives us to push boundaries and create cutting-edge solutions for our customers."
+[integrity]
+    other = "Integrity"
+[integrity_desc]
+    other = "We conduct business with honesty, transparency, and ethical practices in all our relationships."
+[customer_focus]
+    other = "Customer Focus"
+[customer_focus_desc]
+    other = "Our customers are at the heart of everything we do, driving our commitment to exceptional service."
+[ready_to_work]
+    other = "Ready to Work With Us?"
+[join_satisfied_customers]
+    other = "Join thousands of satisfied customers who trust us for their polymer needs."
+[view_products]
+    other = "View Products"
+
+# Products page translations
+[products_count]
+    other = "Products"
+[view_category]
+    other = "View Category"
+[browse_products]
+    other = "Browse Products"
+
+# News page translations
+[news_center]
+    other = "News Center"
+[news_description]
+    other = "Latest technical articles, industry news and product updates from Shangmai Polymer"
+[search_news]
+    other = "Search news"
+[search_news_placeholder]
+    other = "Search news..."
+[articles_count]
+    other = "Articles"
+[view_articles]
+    other = "View Articles"
+[articles_unit]
+    other = "articles"
+[read_article]
+    other = "Read Article"
+[no_articles]
+    other = "No Articles Available"
+[articles_coming_soon]
+    other = "Article content will be updated soon!"
+[adjust_search_news]
+    other = "Try adjusting your search terms or browse all article categories"
+[article_published_by]
+    other = "Published by Shanghai Shangmai Polymer Materials Co., Ltd. Please cite source when reposting."
+[contact_inquiry]
+    other = "Contact Us"
+[contact_for_info]
+    other = "Contact us for more product information or technical support"
+[article_information]
+    other = "Article Information"
+[category]
+    other = "Category"
+[published]
+    other = "Published"
+[read_time]
+    other = "Read Time"
+[read_time_minutes]
+    other = "~{0} min"
+[share_article]
+    other = "Share Article"
+[back_to_news]
+    other = "Back to News"
+
+# Tech page translations
+[tech_cases]
+    other = "Technology Cases"
+[technology]
+    other = "Technology"
+[adjust_search_cases]
+    other = "Try adjusting your search terms or browse all cases"
+[technical_consultation]
+    other = "Technical Consultation"
+[need_solutions]
+    other = "Need similar technical solutions? Contact our expert team"
+[contact_expert]
+    other = "Contact Expert"
+[related_cases]
+    other = "Related Cases"
+[back_to_cases]
+    other = "Back to Cases"
+
+# Opportunities page translations
+[job_opportunities]
+    other = "Opportunities"
+[adjust_search_jobs]
+    other = "Try adjusting your search terms or browse all jobs"
+[quick_apply]
+    other = "Quick Apply"
+[interested_position]
+    other = "Interested in this position? Contact our HR team immediately"
+[send_resume]
+    other = "Send Resume"
+[contact_hr]
+    other = "Contact HR"
+[requirements]
+    other = "Requirements"
+[other_positions]
+    other = "Other Positions"
+[back_to_jobs]
+    other = "Back to Jobs"

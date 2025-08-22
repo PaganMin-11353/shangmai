@@ -1,0 +1,352 @@
+[nav_home] 
+    other = "首页"
+[nav_tech] 
+    other = "项目案例"
+[nav_products] 
+    other = "产品目录"
+[nav_certs] 
+    other = "资质证书"
+[nav_news] 
+    other = "新闻"
+[nav_contact] 
+    other = "联系我们"
+[learn_more] 
+    other = "了解更多"
+[search_placeholder] 
+    other = "搜索产品…"
+[lang_zh] 
+    other = "中文"
+[lang_en] 
+    other = "English"
+[lang_ja] 
+    other = "日本語"
+[lang_my] 
+    other = "Bahasa Melayu"
+
+# Footer translations
+[quick_links]
+    other = "快捷链接"
+[contact_information]
+    other = "联系方式"
+[mobile]
+    other = "手机"
+[fax]
+    other = "传真"
+[email]
+    other = "邮箱"
+[business_hours]
+    other = "营业时间"
+[company_description]
+    other = "专业的高分子材料生产商，专注于高质量橡胶制品研发与生产"
+[address_label]
+    other = "地址"
+[postal_code_label]
+    other = "邮政编码"
+[privacy_policy]
+    other = "隐私政策"
+[terms_of_service]
+    other = "服务条款"
+[cookie_policy]
+    other = "Cookie政策"
+[sitemap]
+    other = "网站地图"
+[all_rights_reserved]
+    other = "版权所有"
+[company_name]
+    other = "上海尚迈高分子材料有限公司"
+[address_content]
+    other = "中国上海市浦东新区泥城镇新泥路370号"
+
+# Home page translations
+[hero_title]
+    other = "上海尚迈高分子材料有限公司"
+[hero_subtitle]
+    other = "专业的高分子材料生产商，专注于高质量橡胶制品研发与生产，提供工业密封件、减震制品等解决方案"
+[explore_products]
+    other = "探索产品"
+[contact_us_cta]
+    other = "联系我们"
+
+# Timeline section
+[timeline_title]
+    other = "历史发展沿革"
+[timeline_subtitle]
+    other = "会社概要·沿革"
+[future_goals]
+    other = "未来的目标"
+
+# Timeline events
+[timeline_2008_title]
+    other = "上海尚迈高分子材料有限公司成立"
+[timeline_2008_desc]
+    other = "公司成立于上海，初期主要从事基础橡胶制品的研发与生产，为橡胶行业奠定基础"
+
+[timeline_2012_title]
+    other = "实现生产工艺过程标准化，产品品质检测中心建立"
+[timeline_2012_desc]
+    other = "建立完善的质量管理体系，通过工艺标准化提升产品质量，建立专业检测中心"
+
+[timeline_2017_title]
+    other = "超高液压密封组件、变压器油囊研发成功"
+[timeline_2017_desc]
+    other = "针对高端应用场景开发超高压密封组件，成功推出变压器油囊等高技术含量产品"
+
+[timeline_2019_title]
+    other = "由行业专家领衔组建研发中心"
+[timeline_2019_desc]
+    other = "聘请业内资深专家组建专业研发团队，为产品创新和技术升级提供强力支撑"
+
+[timeline_2022_title]
+    other = "江苏尚迈新材料科技有限公司成立"
+[timeline_2022_desc]
+    other = "在江苏设立分公司，扩大生产规模，完善华东地区产业布局，提升服务能力"
+
+[timeline_2024_title]
+    other = "全年销售额突破1000万人民币"
+[timeline_2024_desc]
+    other = "通过产品质量提升和市场拓展，年销售额首次突破千万大关，奠定行业地位"
+
+[timeline_future_desc]
+    other = "随着中国汽车产业和高端装备制造业的持续发展，高品质橡胶制品及密封件等行业持续快速增长，预计制品需求量呈增长趋势，未来计划创建立年产2000吨级分级高分子材料及50万套减振制品的全自动化生产线，可实现年营业收入5000万元人民币。"
+
+# Header navigation and accessibility
+[nav_home_fallback]
+    other = "首页"
+[nav_products_fallback]
+    other = "产品"
+[nav_about_fallback]
+    other = "关于我们"
+[nav_contact_fallback]
+    other = "联系我们"
+[aria_goto_homepage]
+    other = "进入首页"
+[aria_main_navigation]
+    other = "主导航"
+[aria_select_language]
+    other = "选择语言"
+[aria_toggle_menu]
+    other = "切换导航菜单"
+
+# 404 Page translations
+[page_not_found]
+    other = "页面未找到"
+[page_not_found_title]
+    other = "页面未找到 - 404"
+[page_not_found_sorry]
+    other = "抱歉，您访问的页面不存在。可能是链接错误或页面已被移动。"
+[search_products_services]
+    other = "搜索产品或服务..."
+[recommended_pages]
+    other = "推荐页面"
+[return_home]
+    other = "返回首页"
+[product_catalog]
+    other = "产品目录"
+[case_studies]
+    other = "案例展示"
+[opportunities]
+    other = "工作机会"
+[contact_us]
+    other = "联系我们"
+[news_updates]
+    other = "新闻动态"
+[contact_if_error]
+    other = "如果您认为这是一个错误，请联系我们："
+
+# Core template translations
+[skip_to_main_content]
+    other = "跳转到主要内容"
+[open_graph_title]
+    other = "尚迈高分子材料有限公司"
+[open_graph_description]
+    other = "专业的高分子材料生产商，专注于高质量橡胶制品研发与生产"
+[company_alt_name]
+    other = "尚迈高分子材料有限公司"
+[site_name_short]
+    other = "尚迈高分子材料"
+[product_polymer_molded]
+    other = "高分子模压制品"
+[product_polymer_molded_desc]
+    other = "精密橡胶模压产品"
+[product_special_sealing]
+    other = "特种密封制品"
+[product_special_sealing_desc]
+    other = "高性能密封系统"
+
+# List page translations
+[search_content]
+    other = "搜索内容"
+[search_placeholder_generic]
+    other = "搜索"
+[featured]
+    other = "精选"
+[no_results_found]
+    other = "未找到结果"
+[adjust_search_terms]
+    other = "请调整搜索词或浏览下方所有内容"
+[no_content_available]
+    other = "暂无内容"
+[no_content_message]
+    other = "此栏目暂无内容，请稍后查看更新！"
+[back_to_home]
+    other = "返回首页"
+[previous]
+    other = "上一页"
+[next]
+    other = "下一页"
+[go_to_previous_page]
+    other = "转到上一页"
+[go_to_next_page]
+    other = "转到下一页"
+[page_info]
+    other = "第 {0} 页，共 {1} 页"
+[items_info]
+    other = "（{0} 项，共 {1} 项）"
+
+# Single page translations
+[breadcrumb_home]
+    other = "首页"
+[by_author]
+    other = "作者："
+[min_read]
+    other = "分钟阅读"
+[table_of_contents]
+    other = "目录"
+[share_this]
+    other = "分享此页"
+[related_articles]
+    other = "相关文章"
+[technical_specifications]
+    other = "技术规格"
+[back_to_section]
+    other = "返回{0}"
+[article_navigation]
+    other = "文章导航"
+
+# About page translations
+[company_story]
+    other = "公司故事"
+[our_impact]
+    other = "我们的影响力"
+[years_of_innovation]
+    other = "创新年数"
+[satisfied_customers]
+    other = "满意客户"
+[premium_products]
+    other = "优质产品"
+[expert_support]
+    other = "专家支持"
+[our_core_values]
+    other = "我们的核心价值"
+[excellence]
+    other = "卓越"
+[excellence_desc]
+    other = "我们力求在每一个产品和服务中追求卓越，保持最高的质量标准。"
+[innovation]
+    other = "创新"
+[innovation_desc]
+    other = "持续创新驱动我们突破界限，为客户创造前沿的解决方案。"
+[integrity]
+    other = "诚信"
+[integrity_desc]
+    other = "我们以诚实、透明和道德的商业实践进行所有关系。"
+[customer_focus]
+    other = "客户至上"
+[customer_focus_desc]
+    other = "客户是我们一切工作的核心，驱动我们致力于卓越服务。"
+[ready_to_work]
+    other = "准备与我们合作吗？"
+[join_satisfied_customers]
+    other = "加入数千名信任我们的满意客户。"
+[view_products]
+    other = "查看产品"
+
+# Products page translations
+[products_count]
+    other = "产品"
+[view_category]
+    other = "查看分类"
+[browse_products]
+    other = "浏览产品"
+
+# News page translations
+[news_center]
+    other = "新闻中心"
+[news_description]
+    other = "上海尚迈高分子材料有限公司最新技术文章、行业动态和产品资讯"
+[search_news]
+    other = "搜索新闻"
+[search_news_placeholder]
+    other = "搜索 news..."
+[articles_count]
+    other = "文章"
+[view_articles]
+    other = "查看文章"
+[articles_unit]
+    other = "篇"
+[read_article]
+    other = "阅读全文"
+[no_articles]
+    other = "暂无文章"
+[articles_coming_soon]
+    other = "文章内容即将更新，敬请期待！"
+[adjust_search_news]
+    other = "请调整搜索词或浏览所有文章分类"
+[article_published_by]
+    other = "本文由上海尚迈高分子材料有限公司发布，如需转载请注明出处。"
+[contact_inquiry]
+    other = "联系咨询"
+[contact_for_info]
+    other = "如需了解更多产品信息或技术支持，请联系我们"
+[article_information]
+    other = "文章信息"
+[category]
+    other = "分类"
+[published]
+    other = "发布时间"
+[read_time]
+    other = "阅读时间"
+[read_time_minutes]
+    other = "约 {0} 分钟"
+[share_article]
+    other = "分享文章"
+[back_to_news]
+    other = "返回新闻中心"
+
+# Tech page translations
+[tech_cases]
+    other = "技术案例"
+[technology]
+    other = "技术"
+[adjust_search_cases]
+    other = "请调整搜索词或浏览所有案例"
+[technical_consultation]
+    other = "技术咨询"
+[need_solutions]
+    other = "需要类似的技术解决方案？联系我们的专家团队"
+[contact_expert]
+    other = "联系专家"
+[related_cases]
+    other = "相关案例"
+[back_to_cases]
+    other = "返回案例列表"
+
+# Opportunities page translations
+[job_opportunities]
+    other = "工作机会"
+[adjust_search_jobs]
+    other = "请调整搜索词或浏览所有职位"
+[quick_apply]
+    other = "快速申请"
+[interested_position]
+    other = "对这个职位感兴趣？立即联系我们的人力资源团队"
+[send_resume]
+    other = "发送简历"
+[contact_hr]
+    other = "联系HR"
+[requirements]
+    other = "岗位要求"
+[other_positions]
+    other = "其他职位"
+[back_to_jobs]
+    other = "返回职位列表"
