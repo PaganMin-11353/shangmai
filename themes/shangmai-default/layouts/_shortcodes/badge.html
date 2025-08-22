@@ -1,1 +1,5 @@
-<span class="badge">{{ .Get 0 }}</span>
+{{- $text := .Get 0 -}}
+{{- if .Inner -}}
+  {{- $text = .Inner | strings.TrimSpace -}}
+{{- end -}}
+<span class="badge">{{ $text }}</span>
