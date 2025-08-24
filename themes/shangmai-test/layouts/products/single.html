@@ -5,13 +5,13 @@
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
             <ol style="display: flex; align-items: center; gap: var(--space-2); list-style: none; padding: 0; font-size: var(--font-size-sm); color: var(--color-text-muted);">
                 <li>
-                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">{{ if eq .Site.Language.Lang "zh" }}首页{{ else }}Home{{ end }}</a>
+                    <a href="{{ .Site.BaseURL }}" style="color: var(--color-secondary);">{{ i18n "home" }}</a>
                 </li>
                 <li style="display: flex; align-items: center; gap: var(--space-2);">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/>
                     </svg>
-                    <a href="/zh/products/" style="color: var(--color-secondary);">{{ if eq .Site.Language.Lang "zh" }}产品目录{{ else }}Products{{ end }}</a>
+                    <a href="{{ "/products/" | relLangURL }}" style="color: var(--color-secondary);">{{ i18n "products" }}</a>
                 </li>
                 <li style="display: flex; align-items: center; gap: var(--space-2);">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
-                        <span>{{ if eq .Site.Language.Lang "zh" }}分类{{ else }}Category{{ end }}: 
+                        <span>{{ i18n "category" }}: 
                         {{ $categorySlug := .Params.category }}
                         {{ $productsPage := .Site.GetPage "/products" }}
                         {{ range $productsPage.Params.categories }}
@@ -109,12 +109,12 @@
                 
                 <!-- Additional Product Info -->
                 <div style="margin-top: var(--space-8); padding: var(--space-6); background-color: var(--color-background-secondary); border-radius: var(--radius-lg);">
-                    <h3 style="margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}产品特点{{ else }}Product Features{{ end }}</h3>
+                    <h3 style="margin-bottom: var(--space-4);">{{ i18n "product_features" }}</h3>
                     <ul style="margin: 0; padding-left: var(--space-6);">
-                        <li>{{ if eq .Site.Language.Lang "zh" }}高品质橡胶材料制造{{ else }}High-quality rubber material construction{{ end }}</li>
-                        <li>{{ if eq .Site.Language.Lang "zh" }}优异的耐用性和稳定性{{ else }}Excellent durability and stability{{ end }}</li>
-                        <li>{{ if eq .Site.Language.Lang "zh" }}严格的质量控制标准{{ else }}Strict quality control standards{{ end }}</li>
-                        <li>{{ if eq .Site.Language.Lang "zh" }}可根据客户需求定制{{ else }}Customizable according to customer requirements{{ end }}</li>
+                        <li>{{ i18n "feature_high_quality" }}</li>
+                        <li>{{ i18n "feature_durability" }}</li>
+                        <li>{{ i18n "feature_quality_control" }}</li>
+                        <li>{{ i18n "feature_customizable" }}</li>
                     </ul>
                 </div>
             </div>
@@ -123,28 +123,28 @@
             <aside style="position: sticky; top: calc(var(--header-height) + var(--space-6));">
                 <!-- Contact for Quote -->
                 <div class="card" style="margin-bottom: var(--space-6);">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}获取报价{{ else }}Get Quote{{ end }}</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "get_quote" }}</h3>
                     <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4);">
-                        {{ if eq .Site.Language.Lang "zh" }}联系我们获取此产品的详细信息和报价{{ else }}Contact us for detailed information and pricing for this product{{ end }}
+                        {{ i18n "contact_for_quote" }}
                     </p>
                     <a href="/zh/contact/" class="btn btn-secondary" style="width: 100%; justify-content: center;">
-                        {{ if eq .Site.Language.Lang "zh" }}联系我们{{ else }}Contact Us{{ end }}
+                        {{ i18n "contact_us" }}
                     </a>
                 </div>
                 
                 <!-- Product Info -->
                 <div class="card" style="margin-bottom: var(--space-6);">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}产品信息{{ else }}Product Information{{ end }}</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "product_information" }}</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--font-size-sm);">
                         {{ if .Params.category }}
                         <div style="display: flex; justify-content: space-between;">
-                            <strong>{{ if eq .Site.Language.Lang "zh" }}类别{{ else }}Category{{ end }}:</strong>
+                            <strong>{{ i18n "category" }}:</strong>
                             <span>{{ .Params.category }}</span>
                         </div>
                         {{ end }}
                         {{ if .Date }}
                         <div style="display: flex; justify-content: space-between;">
-                            <strong>{{ if eq .Site.Language.Lang "zh" }}更新时间{{ else }}Updated{{ end }}:</strong>
+                            <strong>{{ i18n "updated" }}:</strong>
                             <span>{{ .Date.Format "2006-01-02" }}</span>
                         </div>
                         {{ end }}
@@ -155,7 +155,7 @@
                 {{ $related := where (where .Site.RegularPages "Section" "products") ".Params.category" .Params.category | first 3 }}
                 {{ if $related }}
                 <div class="card">
-                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ if eq .Site.Language.Lang "zh" }}相关产品{{ else }}Related Products{{ end }}</h3>
+                    <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">{{ i18n "related_products" }}</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-4);">
                         {{ range $related }}
                         {{ if ne .RelPermalink $.RelPermalink }}
@@ -203,7 +203,7 @@
                 {{ end }}
                 
                 <a href="/zh/products/" class="btn btn-primary">
-                    {{ if eq .Site.Language.Lang "zh" }}返回产品目录{{ else }}Back to Products{{ end }}
+                    {{ i18n "back_to_products" }}
                 </a>
                 
                 {{ if .NextInSection }}

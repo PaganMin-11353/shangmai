@@ -41,9 +41,8 @@
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ i18n "open_graph_description" | default .Site.Params.description }}{{ end }}">
     <meta property="og:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ .Site.Params.default_image | absURL }}{{ end }}">
     <meta property="og:site_name" content="{{ i18n "site_name_short" | default .Site.Title }}">
-    <meta property="og:locale" content="{{ if eq .Site.Language.Lang "zh" }}zh_CN{{ else if eq .Site.Language.Lang "ja" }}ja_JP{{ else }}en_US{{ end }}">
-    {{ if eq .Site.Language.Lang "zh" }}<meta property="og:locale:alternate" content="en_US">{{ end }}
-    {{ if eq .Site.Language.Lang "zh" }}<meta property="og:locale:alternate" content="ja_JP">{{ end }}
+    <meta property="og:locale" content="{{ if eq .Site.Language.Lang "zh" }}zh_CN{{ else if eq .Site.Language.Lang "ja" }}ja_JP{{ else if eq .Site.Language.Lang "ms" }}ms_MY{{ else }}en_US{{ end }}">
+    {{ range .Site.Languages }}{{ if ne .Lang $.Site.Language.Lang }}<meta property="og:locale:alternate" content="{{ if eq .Lang "zh" }}zh_CN{{ else if eq .Lang "ja" }}ja_JP{{ else if eq .Lang "ms" }}ms_MY{{ else }}en_US{{ end }}">{{ end }}{{ end }}
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">

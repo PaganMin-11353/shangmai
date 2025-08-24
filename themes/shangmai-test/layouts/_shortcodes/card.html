@@ -31,7 +31,7 @@
   
   {{ if $link }}
   <div style="margin-top: var(--space-4);">
-    <a href="{{ $link }}" class="btn btn-outline">{{ if eq $.Site.Language.Lang "zh" }}了解更多{{ else }}Learn More{{ end }}</a>
+    <a href="{{ $link }}" class="btn btn-outline">{{ i18n "learn_more" }}</a>
   </div>
   {{ end }}
 </div>

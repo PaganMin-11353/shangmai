@@ -31,26 +31,12 @@
         </header>
         
         <!-- Check if this is the main news page with categories -->
-        {{ if eq .RelPermalink (printf "/%s/news/" .Site.Language.Lang) }}
+        {{ if .Params.categories }}
         <!-- Category Grid Layout for Main News Page -->
-        {{ $categories := (slice 
-            (dict "name" "可曲挠橡胶接头" "slug" "flexible-rubber-joint" "description" "柔性橡胶接头相关技术文章和产品介绍")
-            (dict "name" "橡胶减震垫" "slug" "rubber-damping-pad" "description" "减震垫产品技术资料和应用案例")
-            (dict "name" "橡胶制品" "slug" "rubber-products" "description" "各类橡胶制品的技术文章和行业资讯")
-            (dict "name" "橡胶膨胀节" "slug" "rubber-expansion-joint" "description" "橡胶膨胀节产品介绍和技术规格")
-            (dict "name" "橡胶软接头" "slug" "rubber-soft-joint" "description" "橡胶软接头产品特性和应用领域")
-            (dict "name" "氟胶管" "slug" "fluorine-tube" "description" "氟胶管产品特点和技术参数")
-            (dict "name" "硅胶密封套" "slug" "silicone-sealing-sleeve" "description" "硅胶密封套产品介绍和使用指南")
-            (dict "name" "硅胶管" "slug" "silicone-tube" "description" "硅胶管产品规格和应用案例")
-            (dict "name" "非金属膨胀节" "slug" "non-metallic-expansion-joint" "description" "非金属膨胀节技术特点和产品优势")
-            (dict "name" "高压密封圈" "slug" "high-pressure-sealing-ring" "description" "高压密封圈产品性能和技术指标")
-            (dict "name" "V型夹布密封圈" "slug" "v-type-fabric-sealing-ring" "description" "V型夹布密封圈结构特点和应用范围")
-        ) }}
         
         <div class="category-grid" id="content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-16);">
-            {{ range $categories }}
-            {{ $categoryPath := printf "/content/news/%s" .slug }}
-            {{ $categoryArticles := where (where $.Site.RegularPages "Section" "news") ".Params.category" .name }}
+            {{ range .Params.categories }}
+            {{ $categoryArticles := where (where $.Site.RegularPages "Section" "news") ".Parent.File.TranslationBaseName" .slug }}
             {{ $articleCount := len $categoryArticles }}
             <a href="{{ printf "/news/%s/" .slug | relLangURL }}" class="category-card-link" style="text-decoration: none; color: inherit; display: block;">
                 <article class="category-card scale-in" data-tags="{{ .name | lower }}" data-title="{{ .name | lower }}">

@@ -24,9 +24,9 @@
                 {{ else }}
                     <!-- Fallback navigation if no menu is defined -->
                     <a href="{{ relLangURL "/" }}" class="nav-link {{ if .IsHome }}active{{ end }}">{{ i18n "nav_home_fallback" }}</a>
-                    <a href="{{ printf "/%s/products/" .Site.Language.Lang }}" class="nav-link {{ if eq .Section "products" }}active{{ end }}">{{ i18n "nav_products_fallback" }}</a>
-                    <a href="{{ printf "/%s/about/" .Site.Language.Lang }}" class="nav-link {{ if eq .Section "about" }}active{{ end }}">{{ i18n "nav_about_fallback" }}</a>
-                    <a href="{{ printf "/%s/contact/" .Site.Language.Lang }}" class="nav-link {{ if eq .Section "contact" }}active{{ end }}">{{ i18n "nav_contact_fallback" }}
+                    <a href="{{ "/products/" | relLangURL }}" class="nav-link {{ if eq .Section "products" }}active{{ end }}">{{ i18n "nav_products_fallback" }}</a>
+                    <a href="{{ "/about/" | relLangURL }}" class="nav-link {{ if eq .Section "about" }}active{{ end }}">{{ i18n "nav_about_fallback" }}</a>
+                    <a href="{{ "/contact/" | relLangURL }}" class="nav-link {{ if eq .Section "contact" }}active{{ end }}">{{ i18n "nav_contact_fallback" }}
                 {{ end }}
                 
                 <!-- Mobile Language Switcher -->
@@ -118,14 +118,17 @@
     border-bottom: 1px solid #e5e7eb;
     z-index: 80;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --nav-width: 400px;
+    --lang-switcher-width: 120px;
+    --gaps-and-padding: 4rem;
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 0;
-    min-height: 60px;
+    padding: 1rem 0;
+    min-height: 70px;
     gap: 1rem;
 }
 
@@ -140,20 +143,19 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    flex-shrink: 1;
+    flex-shrink: 0;
     min-width: 0;
-    overflow: hidden;
     font-size: 1.25rem;
     font-weight: 600;
     color: #374151;
     white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .site-logo img {
-    height: 40px;
+    height: 56px;
     width: auto;
-    max-width: none;
+    max-width: calc(100vw - var(--nav-width) - var(--lang-switcher-width) - var(--gaps-and-padding));
+    max-width: min(calc(100vw - var(--nav-width) - var(--lang-switcher-width) - var(--gaps-and-padding)), 400px);
     transition: all 0.3s ease;
     object-fit: contain;
     flex-shrink: 0;
@@ -172,12 +174,13 @@
 .main-nav {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2vw, 1.8rem);
+    gap: clamp(0.8rem, 2vw, 1.5rem);
     flex-wrap: nowrap;
     justify-content: flex-end;
-    flex: 1;
-    margin-right: 1rem;
+    flex-shrink: 0;
     white-space: nowrap;
+    min-width: var(--nav-width);
+    overflow: hidden;
 }
 
 .nav-link {
@@ -278,21 +281,44 @@
     opacity: 1;
 }
 
+/* Medium Desktop - Prevent logo clipping before mobile breakpoint */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .site-header {
+        --nav-width: 360px;
+        --lang-switcher-width: 110px;
+    }
+    
+    .main-nav {
+        gap: clamp(0.6rem, 1.5vw, 1.2rem);
+        min-width: var(--nav-width);
+    }
+    
+    .nav-link {
+        font-size: 0.95rem;
+    }
+}
+
 /* Tablet/Large Mobile - Hide nav when text starts to overflow */
 @media (max-width: 1200px) {
+    .site-header {
+        --nav-width: 80px; /* Just mobile toggle button */
+        --lang-switcher-width: 0px; /* Hidden in mobile menu */
+    }
+    
     .site-header .container {
         padding: 0 1rem;
     }
     
     .header-content {
-        min-height: 56px;
-        padding: 0.5rem 0;
+        min-height: 64px;
+        padding: 0.75rem 0;
     }
     
     .site-logo img {
-        height: 36px;
+        height: 48px;
         width: auto;
-        max-width: none;
+        max-width: calc(100vw - var(--nav-width) - var(--gaps-and-padding));
+        max-width: min(calc(100vw - var(--nav-width) - var(--gaps-and-padding)), 300px);
         object-fit: contain;
     }
     
@@ -412,6 +438,7 @@
 .language-switcher {
     position: relative;
     flex-shrink: 0;
+    min-width: var(--lang-switcher-width);
 }
 
 .lang-button {
