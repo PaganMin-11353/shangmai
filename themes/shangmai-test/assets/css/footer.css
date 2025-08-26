@@ -1,0 +1,99 @@
+/* Footer Component Styles */
+
+/* Enhanced Footer Styling */
+.footer-section h3 {
+    position: relative;
+    padding-bottom: var(--space-2);
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    border-radius: var(--radius-full);
+}
+
+/* Social Media Icon Hover Effects */
+.footer-section a[aria-label*="Follow"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-fast);
+}
+
+.footer-section a[aria-label*="Follow"]:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Newsletter Form Styling */
+.footer-section input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+.footer-section input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer Links Hover Effects */
+.footer-section a:not([aria-label*="Follow"]):hover {
+    color: var(--color-white);
+    text-decoration: none;
+    padding-left: var(--space-2);
+    transition: all var(--transition-fast);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-bottom > div {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom nav {
+        justify-content: center;
+    }
+    
+    .footer-section form {
+        flex-direction: column;
+    }
+    
+    .footer-section input[type="email"] {
+        margin-bottom: var(--space-2);
+    }
+}
+
+/* Accessibility Improvements */
+.footer-section a:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: var(--radius-base);
+}
+
+/* Address Styling */
+address {
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.8);
+}

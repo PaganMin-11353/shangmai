@@ -1,6 +1,41 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-US'
-title = 'Shangmai Test'
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = true
+title = 'Shangmai Polymer'
+
+# Language configuration
+[languages]
+  [languages.zh]
+    languageCode = 'zh-CN'
+    languageName = '中文'
+    title = '尚迈高分子材料'
+    weight = 1
+    [languages.zh.params]
+      flag = '🇨🇳'
+      
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = 'English'
+    title = 'Shangmai Polymer'
+    weight = 2
+    [languages.en.params]
+      flag = '🇺🇸'
+      
+  [languages.ja]
+    languageCode = 'ja-JP'
+    languageName = '日本語'
+    title = 'シャンマイポリマー'
+    weight = 3
+    [languages.ja.params]
+      flag = '🇯🇵'
+      
+  [languages.ms]
+    languageCode = 'ms-MY'
+    languageName = 'Bahasa Melayu'
+    title = 'Shangmai Polymer'
+    weight = 4
+    [languages.ms.params]
+      flag = '🇲🇾'
 
 [module]
   [module.hugoVersion]
@@ -15,41 +50,110 @@ title = 'Shangmai Test'
   hero_title = "Innovation Meets Excellence"
   hero_subtitle = "Discover our cutting-edge products designed to transform your business"
   
-  # Contact info
-  email = "info@shangmai.com"
-  phone = "+1 (555) 123-4567"
-  address = "123 Innovation Drive, Tech City, TC 12345"
+  # Contact info (customize these for your site)
+  email = "contact@example.com"
+  phone = "+1-555-123-4567"
+  fax = "+1-555-987-6543"
+  postal_code = "12345"
+  hours = "Monday - Friday: 9:00 AM - 5:00 PM"
   
-  # Social media
+  # Social media (customize these for your site)
   [params.social]
-    facebook = "https://facebook.com/shangmai"
-    twitter = "https://twitter.com/shangmai"
-    linkedin = "https://linkedin.com/company/shangmai"
-    instagram = "https://instagram.com/shangmai"
+    facebook = "https://facebook.com/yourcompany"
+    twitter = "https://twitter.com/yourcompany"
+    linkedin = "https://linkedin.com/company/yourcompany"
+    instagram = "https://instagram.com/yourcompany"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
       
-[menu]
-  [[menu.main]]
-    name = "Products"
-    url = "/products/"
+# Language-specific menus
+[languages.zh.menu]
+  [[languages.zh.menu.main]]
+    name = "产品目录"
+    url = "/zh/products/"
     weight = 10
-  [[menu.main]]
-    name = "Solutions"
-    url = "/solutions/"
+  [[languages.zh.menu.main]]
+    name = "项目案例"
+    url = "/zh/tech/"
     weight = 20
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
+  [[languages.zh.menu.main]]
+    name = "新闻"
+    url = "/zh/news/"
     weight = 30
-  [[menu.main]]
-    name = "Support"
-    url = "/support/"
+  [[languages.zh.menu.main]]
+    name = "职业机会"
+    url = "/zh/opportunities/"
     weight = 40
-  [[menu.main]]
+  [[languages.zh.menu.main]]
+    name = "联系我们"
+    url = "/zh/contact/"
+    weight = 50
+
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "Products"
+    url = "/en/products/"
+    weight = 10
+  [[languages.en.menu.main]]
+    name = "Projects"
+    url = "/en/tech/"
+    weight = 20
+  [[languages.en.menu.main]]
+    name = "News"
+    url = "/en/news/"
+    weight = 30
+  [[languages.en.menu.main]]
+    name = "Opportunities"
+    url = "/en/opportunities/"
+    weight = 40
+  [[languages.en.menu.main]]
     name = "Contact"
-    url = "/contact/"
+    url = "/en/contact/"
+    weight = 50
+
+[languages.ja.menu]
+  [[languages.ja.menu.main]]
+    name = "製品"
+    url = "/ja/products/"
+    weight = 10
+  [[languages.ja.menu.main]]
+    name = "プロジェクト"
+    url = "/ja/tech/"
+    weight = 20
+  [[languages.ja.menu.main]]
+    name = "ニュース"
+    url = "/ja/news/"
+    weight = 30
+  [[languages.ja.menu.main]]
+    name = "採用情報"
+    url = "/ja/opportunities/"
+    weight = 40
+  [[languages.ja.menu.main]]
+    name = "お問い合わせ"
+    url = "/ja/contact/"
+    weight = 50
+
+[languages.ms.menu]
+  [[languages.ms.menu.main]]
+    name = "Produk"
+    url = "/ms/products/"
+    weight = 10
+  [[languages.ms.menu.main]]
+    name = "Projek"
+    url = "/ms/tech/"
+    weight = 20
+  [[languages.ms.menu.main]]
+    name = "Berita"
+    url = "/ms/news/"
+    weight = 30
+  [[languages.ms.menu.main]]
+    name = "Peluang Kerjaya"
+    url = "/ms/opportunities/"
+    weight = 40
+  [[languages.ms.menu.main]]
+    name = "Hubungi Kami"
+    url = "/ms/contact/"
     weight = 50

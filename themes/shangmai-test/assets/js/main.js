@@ -18,9 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initializeNavigation() {
     const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const mobileClose = document.getElementById('mobile-nav-close');
     const mainNav = document.getElementById('main-nav');
     const backdrop = document.getElementById('mobile-nav-backdrop');
     const header = document.getElementById('site-header');
+    const langButton = document.getElementById('lang-button');
+    const langDropdown = document.getElementById('lang-dropdown');
     
     if (mobileToggle && mainNav) {
         // Mobile menu toggle
@@ -28,6 +31,14 @@ function initializeNavigation() {
             e.stopPropagation();
             toggleMobileMenu();
         });
+        
+        // Mobile menu close button
+        if (mobileClose) {
+            mobileClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeMobileMenu();
+            });
+        }
         
         // Close mobile menu when clicking backdrop
         if (backdrop) {
@@ -50,7 +61,7 @@ function initializeNavigation() {
         
         // Close mobile menu when window is resized to desktop
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1200) {
                 closeMobileMenu();
             }
         });
@@ -61,6 +72,49 @@ function initializeNavigation() {
                 trapFocus(e, mainNav);
             }
         });
+    }
+    
+    // Language switcher functionality
+    if (langButton && langDropdown) {
+        langButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleLanguageDropdown();
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langButton.contains(e.target) && !langDropdown.contains(e.target)) {
+                closeLanguageDropdown();
+            }
+        });
+        
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && langDropdown.classList.contains('active')) {
+                closeLanguageDropdown();
+                langButton.focus();
+            }
+        });
+    }
+    
+    function toggleLanguageDropdown() {
+        const isActive = langDropdown.classList.contains('active');
+        
+        if (isActive) {
+            closeLanguageDropdown();
+        } else {
+            openLanguageDropdown();
+        }
+    }
+    
+    function openLanguageDropdown() {
+        langDropdown.classList.add('active');
+        langButton.setAttribute('aria-expanded', 'true');
+    }
+    
+    function closeLanguageDropdown() {
+        langDropdown.classList.remove('active');
+        langButton.setAttribute('aria-expanded', 'false');
     }
     
     function toggleMobileMenu() {

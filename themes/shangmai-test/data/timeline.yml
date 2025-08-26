@@ -1,0 +1,38 @@
+timeline:
+  title_key: "timeline_title"
+  subtitle_key: "timeline_subtitle"
+  
+  events:
+    - year: 2008
+      year_class: "year-2008"
+      title_key: "timeline_2008_title"
+      description_key: "timeline_2008_desc"
+      
+    - year: 2014
+      year_class: "year-2014"
+      title_key: "timeline_2012_title"
+      description_key: "timeline_2012_desc"
+      
+    - year: 2015
+      year_class: "year-2015"
+      title_key: "timeline_2017_title"
+      description_key: "timeline_2017_desc"
+      
+    - year: 2016
+      year_class: "year-2016"
+      title_key: "timeline_2019_title"
+      description_key: "timeline_2019_desc"
+      
+    - year: 2017
+      year_class: "year-2017"
+      title_key: "timeline_2022_title"
+      description_key: "timeline_2022_desc"
+      
+    - year: 2018
+      year_class: "year-2018"
+      title_key: "timeline_2024_title"
+      description_key: "timeline_2024_desc"
+      
+  future_goals:
+    title_key: "future_goals"
+    description_key: "timeline_future_desc"

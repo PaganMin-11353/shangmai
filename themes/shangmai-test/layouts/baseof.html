@@ -15,12 +15,26 @@
     <link rel="canonical" href="{{ .Permalink }}">
     
     <!-- CSS -->
-    {{ $css := resources.Get "css/main.css" }}
-    {{ if $css }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ $mainCss := resources.Get "css/main.css" }}
+    {{ $headerCss := resources.Get "css/header.css" }}
+    {{ $footerCss := resources.Get "css/footer.css" }}
+    {{ if $mainCss }}
+    <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}">
     {{ else }}
     <!-- Fallback CSS -->
     <link rel="stylesheet" href="/css/main.css">
+    {{ end }}
+    {{ if $headerCss }}
+    <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}">
+    {{ end }}
+    {{ if $footerCss }}
+    <link rel="stylesheet" href="{{ $footerCss.RelPermalink }}">
+    {{ end }}
+    {{ if .IsHome }}
+    {{ $homeCss := resources.Get "css/home.css" }}
+    {{ if $homeCss }}
+    <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}">
+    {{ end }}
     {{ end }}
     
     <!-- Preload fonts -->
@@ -41,8 +55,8 @@
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ i18n "open_graph_description" | default .Site.Params.description }}{{ end }}">
     <meta property="og:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ .Site.Params.default_image | absURL }}{{ end }}">
     <meta property="og:site_name" content="{{ i18n "site_name_short" | default .Site.Title }}">
-    <meta property="og:locale" content="{{ if eq .Site.Language.Lang "zh" }}zh_CN{{ else if eq .Site.Language.Lang "ja" }}ja_JP{{ else if eq .Site.Language.Lang "ms" }}ms_MY{{ else }}en_US{{ end }}">
-    {{ range .Site.Languages }}{{ if ne .Lang $.Site.Language.Lang }}<meta property="og:locale:alternate" content="{{ if eq .Lang "zh" }}zh_CN{{ else if eq .Lang "ja" }}ja_JP{{ else if eq .Lang "ms" }}ms_MY{{ else }}en_US{{ end }}">{{ end }}{{ end }}
+    <meta property="og:locale" content="{{ .Site.Language.LanguageCode | replace "-" "_" }}">
+    {{ range .Site.Languages }}{{ if ne .Lang $.Site.Language.Lang }}<meta property="og:locale:alternate" content="{{ .LanguageCode | replace "-" "_" }}">{{ end }}{{ end }}
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -162,6 +176,12 @@
     <script src="{{ $js.RelPermalink }}" defer></script>
     {{ else }}
     <script src="/js/main.js" defer></script>
+    {{ end }}
+    {{ if .IsHome }}
+    {{ $carouselJs := resources.Get "js/carousel.js" }}
+    {{ if $carouselJs }}
+    <script src="{{ $carouselJs.RelPermalink }}" defer></script>
+    {{ end }}
     {{ end }}
     
     <!-- Analytics (if configured) -->

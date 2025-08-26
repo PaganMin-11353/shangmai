@@ -10,7 +10,7 @@
                 
                 <address style="font-style: normal; margin-top: var(--space-4);">
                     <strong>{{ i18n "address_label" }}:</strong> {{ i18n "address_content" }}<br>
-                    <strong>{{ i18n "postal_code_label" }}:</strong> 201306
+                    <strong>{{ i18n "postal_code_label" }}:</strong> {{ .Site.Params.postal_code | default "12345" }}
                 </address>
                 
                 <!-- Dynamic Social Media Links -->
@@ -55,22 +55,22 @@
                 <p style="margin-bottom: var(--space-2);">
                     <strong>{{ i18n "mobile" }}:</strong><br>
                     <span class="status-indicator status-online"></span>
-                    <a href="tel:+8613311782810" style="color: inherit;">
-                        +86-13311782810
+                    <a href="tel:{{ .Site.Params.phone | default "+1-555-123-4567" | replaceRE "[^0-9+]" "" }}" style="color: inherit;">
+                        {{ .Site.Params.phone | default "+1-555-123-4567" }}
                     </a>
                 </p>
                 
                 <p style="margin-bottom: var(--space-2);">
                     <strong>{{ i18n "fax" }}:</strong><br>
-                    <a href="tel:02156789012" style="color: inherit;">
-                        021-56789012
+                    <a href="tel:{{ .Site.Params.fax | default "+1-555-987-6543" | replaceRE "[^0-9+]" "" }}" style="color: inherit;">
+                        {{ .Site.Params.fax | default "+1-555-987-6543" }}
                     </a>
                 </p>
                 
                 <p style="margin-bottom: var(--space-2);">
                     <strong>{{ i18n "email" }}:</strong><br>
-                    <a href="mailto:maoxp@smpolymer.com" style="color: inherit;">
-                        maoxp@smpolymer.com
+                    <a href="mailto:{{ .Site.Params.email | default "contact@example.com" }}" style="color: inherit;">
+                        {{ .Site.Params.email | default "contact@example.com" }}
                     </a>
                 </p>
                 
@@ -107,102 +107,4 @@
     </div>
 </footer>
 
-<style>
-/* Enhanced Footer Styling */
-.footer-section h3 {
-    position: relative;
-    padding-bottom: var(--space-2);
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-    border-radius: var(--radius-full);
-}
-
-/* Social Media Icon Hover Effects */
-.footer-section a[aria-label*="Follow"] {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-lg);
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all var(--transition-fast);
-}
-
-.footer-section a[aria-label*="Follow"]:hover {
-    background-color: var(--color-secondary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-/* Newsletter Form Styling */
-.footer-section input[type="email"]:focus {
-    outline: none;
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
-}
-
-.footer-section input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Footer Links Hover Effects */
-.footer-section a:not([aria-label*="Follow"]):hover {
-    color: var(--color-white);
-    text-decoration: none;
-    padding-left: var(--space-2);
-    transition: all var(--transition-fast);
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-8);
-        text-align: center;
-    }
-    
-    .footer-section h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-bottom > div {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-bottom nav {
-        justify-content: center;
-    }
-    
-    .footer-section form {
-        flex-direction: column;
-    }
-    
-    .footer-section input[type="email"] {
-        margin-bottom: var(--space-2);
-    }
-}
-
-/* Accessibility Improvements */
-.footer-section a:focus-visible {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 2px;
-    border-radius: var(--radius-base);
-}
-
-/* Address Styling */
-address {
-    line-height: var(--line-height-relaxed);
-    color: rgba(255, 255, 255, 0.8);
-}
-</style>
+<!-- Footer styles are loaded via footer.css -->
