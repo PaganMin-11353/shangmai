@@ -1,23 +1,11 @@
-# SHANGMAI POLYMER WEBSITE 
+# SHANGMAI POLYMER WEBSITE
 
 ## TODO
- - [ ] website logo is clipped
- - [ ] mobile menu needs to be fixed.
- - [ ] mobile menu icon go [icon website](www.heroicons.com).
- - [ ]use bar3 and chvron-right
- <!--
- hamburger icon
- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+ - [x] website logo is clipped
+ - [x] mobile menu needs to be fixed.
+ - [x] mobile menu icon go [icon website](www.heroicons.com).
+ - [x]use bar3 and chvron-right
 
-  right arrow
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /> 
-  
-  -->
-</svg>
-
-</svg>
 
  - [ ] css and js needs to be tidied up from home.html or other html. needs double check.
  - [ ] header functionality is not consistent in every page, problems with default html maybe
