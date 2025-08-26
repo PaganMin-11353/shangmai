@@ -1,5 +1,6 @@
+# GitHub Pages URL - update with your actual username and repository name
 # baseURL = "https://<username>.github.io/<repo>/"
-# baseURL = "https://example.com"
+baseURL = "https://alanz.github.io/sm-website/"
 title = "Shangmai Polymer"
 theme = "shangmai-test"
 
@@ -7,15 +8,53 @@ defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 
+# Hugo module configuration
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+
 [params]
+  # Theme colors and branding
   primary = "#0B5FFF"
   logo = "/images/logo/logo-main.gif"
   description = "Shangmai 尚迈 · 企业官网"
+  default_image = "/images/og-image.jpg"
+  
+  # Hero section
+  hero_title = "Innovation Meets Excellence"
+  hero_subtitle = "Discover our cutting-edge products designed to transform your business"
+  
+  # Real contact information
+  email = "maoxp@smpolymer.com"
+  phone = "+86-13311782810"
+  fax = "021-56789012"
+  postal_code = "201306"
+  hours = "周一至周五: 上午8:00 - 下午6:00"
+  
+  # Company information
+  author = "Shanghai Shangmai Polymer Materials Co., Ltd."
+  keywords = "polymer materials, rubber products, sealing components, Shanghai"
+  
+  # Social Media Configuration
+  # References data/social.yml for actual links and SVG icons
+  [params.social]
+    enable = true
+    # Social links are configured in data/social.yml
+    # Available platforms: wechat, whatsapp, linkedin
+    platforms = ["wechat", "whatsapp", "linkedin"]
+
+# Markup configuration for content rendering
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [languages]
-
   [languages.zh]
+    languageCode = 'zh-CN'
     languageName = "中文"
+    title = '尚迈高分子材料'
     weight = 1
     [languages.zh.params]
       flag = "🇨🇳"
