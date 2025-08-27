@@ -1,6 +1,6 @@
 # GitHub Pages URL - update with your actual username and repository name
 # baseURL = "https://<username>.github.io/<repo>/"
-baseURL = "https://alanz.github.io/sm-website/"
+baseURL = "https://paganmin-11353.github.io/shangmai/"
 title = "Shangmai Polymer"
 theme = "shangmai-test"
 
