@@ -4,8 +4,8 @@
             <!-- Logo -->
             <a href="{{ relLangURL "/" }}" class="site-logo" aria-label="{{ i18n "aria_goto_homepage" }}">
                 {{ if .Site.Params.logo }}
-                    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" loading="eager" class="logo-main">
-                    <img src="/images/logo/logo-short.gif" alt="{{ .Site.Title }}" loading="eager" class="logo-compact">
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" loading="eager" class="logo-main">
+                    <img src="{{ "images/logo/logo-short.gif" | relURL }}" alt="{{ .Site.Title }}" loading="eager" class="logo-compact">
                 {{ else }}
                     {{ .Site.Title }}
                 {{ end }}
@@ -41,7 +41,7 @@
                     {{ range .Site.Languages }}
                         {{ $url := "" }}
                         {{ if or $.IsHome (eq $.Section "tech") (eq $.Section "news") (eq $.Section "products") (eq $.Section "opportunities") }}
-                            {{ $url = printf "/%s/" .Lang }}
+                            {{ $url = printf "%s%s/" $.Site.BaseURL .Lang }}
                         {{ else }}
                             {{ $url = $.RelPermalink | relLangURL }}
                         {{ end }}
@@ -78,7 +78,7 @@
                     {{ range .Site.Languages }}
                         {{ $url := "" }}
                         {{ if or $.IsHome (eq $.Section "tech") (eq $.Section "news") (eq $.Section "products") (eq $.Section "opportunities") }}
-                            {{ $url = printf "/%s/" .Lang }}
+                            {{ $url = printf "%s%s/" $.Site.BaseURL .Lang }}
                         {{ else }}
                             {{ $url = $.RelPermalink | relLangURL }}
                         {{ end }}

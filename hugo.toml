@@ -17,9 +17,9 @@ enableRobotsTXT = true
 [params]
   # Theme colors and branding
   primary = "#0B5FFF"
-  logo = "/images/logo/logo-main.gif"
+  logo = "images/logo/logo-main.gif"
   description = "Shangmai 尚迈 · 企业官网"
-  default_image = "/images/og-image.jpg"
+  default_image = "images/og-image.jpg"
   
   # Hero section
   hero_title = "Innovation Meets Excellence"

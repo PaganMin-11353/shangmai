@@ -4,7 +4,7 @@
             <!-- Company Info -->
             <div class="footer-section">
                 <div class="footer-logo">
-                    <img src="/images/logo/logo-footer.gif" alt="{{ i18n "company_name" | default .Site.Title }}" style="max-height: 80px; margin-bottom: 1rem;">
+                    <img src="{{ "images/logo/logo-footer.gif" | relURL }}" alt="{{ i18n "company_name" | default .Site.Title }}" style="max-height: 80px; margin-bottom: 1rem;">
                 </div>
                 <p>{{ i18n "company_description" | default .Site.Params.description | default "Professional polymer material manufacturer" }}</p>
                 
